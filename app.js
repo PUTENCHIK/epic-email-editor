@@ -225,6 +225,9 @@ letter.addEventListener('click', e => {
         currentObject = object;
         editingImage = true;
 
+        path.classList.remove("good");
+        path.classList.remove("error");
+
         updateImageBlock.classList.remove("dissable");
         let bufBorder = currentObject.style.border;
         currentObject.style.outline = "4px solid red";
@@ -240,7 +243,13 @@ letter.addEventListener('click', e => {
         updateImageWidthInput.value = currentObject.style.width;
         updateImageHeightInput.value = currentObject.style.height;  
 
-        //path.value = currentObject.src;
+        if (currentObject.src != "https://tatarstan-symphony.com/images/noimage.jpg") {
+            path.value = currentObject.src;
+        }
+        else {
+            path.value = "";
+        }
+        
         displayImage.src = currentObject.src;
         displayImageOpacity.src = currentObject.src;
         
@@ -253,15 +262,19 @@ letter.addEventListener('click', e => {
         updateImagePaddingLeftInput.value = parentTd.style.paddingLeft;
         updateImagePaddingRightInput.value = parentTd.style.paddingRight;
 
-        updateImageInput.addEventListener('change', (e)=>{
-            const currFiles = e.target.files;
-            if(currFiles.length > 0){
-                let src = URL.createObjectURL(currFiles[0]);
-                currentObject.src = src;
-                displayImage.src = src;
-                displayImageOpacity.src = src;
-            }
+        path.addEventListener('change', e => {
+            currentObject.src = path.value;
         });
+
+        currentObject.onerror = function() {
+            path.classList.add("error");
+            currentObject.src = "https://tatarstan-symphony.com/images/noimage.jpg";
+        };
+
+        currentObject.onload = function() {
+            path.classList.add("good");
+        };
+        
     }
 
     else if (object.tagName === "TD" && mainTable.contains(object)) {
@@ -471,4 +484,3 @@ templatesBlockBuff.addEventListener('click', e => {
         choseMenu.classList.remove("dissable");
     }
 });
-

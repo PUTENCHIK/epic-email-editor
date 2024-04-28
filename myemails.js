@@ -192,6 +192,8 @@ function createNewElement(id, title) {
     email_box.className = "email";
     let email_head = document.createElement("div");
     email_head.className = "head";
+    let email_body = document.createElement("div");
+    email_body.className = "email-body";
     let email_name = document.createElement("div");
     email_name.className = "email-name";
     email_name.textContent = title;
@@ -225,6 +227,16 @@ function createNewElement(id, title) {
         deleteLetter(id);
     });
 
+    let letter = getLetterFromStorage(id);
+
+    if (letter && letter['html']) {
+        email_body.innerHTML = letter['html'];
+        email_body.classList.add("scaled");
+    }
+    else {
+        email_body.textContent = "Этот шаблон ещё не отредактирован";
+    }
+
     redact_box.append(redact_icon);
     delete_box.append(delete_icon);
     icons_box.append(redact_box);
@@ -232,6 +244,7 @@ function createNewElement(id, title) {
     email_head.append(email_name);
     email_head.append(icons_box);
     email_box.append(email_head);
+    email_box.append(email_body);
     email_box.append(hidden_input);
 
     return email_box;

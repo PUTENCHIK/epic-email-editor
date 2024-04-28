@@ -151,3 +151,11 @@ img.icon {
 .button-icon {
     padding: 8px;
 }
+
+.email-body {
+    padding: 15px;
+}
+
+.email-body.scaled {
+    transform: scale(0.4935);
+}

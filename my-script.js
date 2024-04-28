@@ -24,11 +24,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let btn_save = document.getElementsByClassName("button-save")[0];
     btn_save.addEventListener("click", () => {
-        let redactor_content = document.getElementsByClassName("mainTable")[0];
+        let redactor = document.getElementsByClassName("letter")[0];
 
-        console.log(redactor_content.parentElement.innerHTML);
-        // let storage = JSON.parse(localStorage['emailwizard']);
-        // storage['letters'][storage['current_letter']]['html'] =
+        let letter_html = redactor.parentElement.innerHTML;
+        console.log(redactor);
+        let storage = JSON.parse(localStorage['emailwizard']);
+        let letters = storage['letters'];
+
+        for (let i = 0; i < letters.length; i++) {
+            if (letters[i]['id'] === storage['current_letter']) {
+                storage['letters'][i]['html'] = letter_html;
+                break;
+            }
+        }
+
+        localStorage['emailwizard'] = JSON.stringify(storage);
     });
 
 });

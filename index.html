@@ -14,8 +14,8 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-	<script src="https://unpkg.com/react@18/umd/react.development.js"></script>			<!-- changes -->
-	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>		<!-- changes -->
+	<!-- <script src="https://unpkg.com/react@18/umd/react.development.js"></script>			
+	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>		 -->
 	<style>
 		body {
 			width: 100% !important;
@@ -170,13 +170,13 @@
 
 		<div id="settings" class="settings">
 			<div class="updatetitleBlock">
-				<span class="updateTitle">Design</span>
+				<span class="updateTitle">Дизайн</span>
 			</div>
 			<div id="updateTextBlock" class="updateTextBlock dissable">
 				<div class="updateTextFonts">
-					<h5 class="updateTextFontsTitle">Text</h5>
+					<h5 class="updateTextFontsTitle">Тест</h5>
 					<div class="fontFamilyBlock">
-						<span class="fontFamilyTitle">Font-family:</span>
+						<span class="fontFamilyTitle">Шрифт:</span>
 						<select class="fontFamilyInput" name="fontFamilyInput" id="fontFamilyInput">
 							<option value='"Times New Roman", Times, serif'>'Times New Roman', Times, serif</option>
 							<option value="Georgia, serif">Georgia, serif</option>
@@ -190,7 +190,7 @@
 						</select>
 					</div>
 					<div class="fontWeightBlock">
-						<span class="fontWeightTitle">Font-weight:</span>
+						<span class="fontWeightTitle">Вид шрифта</span>
 						<div class="fontWeights">
 							<div class="fontWeightBoldBlock">
 								<span class="fontWeightBoldSpan"><b>Ж</b></span>
@@ -208,20 +208,20 @@
 						<!-- <input class="fontWeightInput" type="text" name="fontWeightInput" id="fontWeightInput"> -->
 					</div>
 					<div class="fontSizeBlock">
-						<span class="fontSizeTitle">Font-size:</span>
+						<span class="fontSizeTitle">Размер шрифта</span>
 						<input class="fontSizeInput" type="text" name="fontSizeInput" id="fontSizeInput">
 					</div>
 					<div class="lineHeightBlock">
-						<span class="lineHeightTitle">Line-height:</span>
+						<span class="lineHeightTitle">Высота строки:</span>
 						<input class="lineHeightInput" type="text" name="lineHeightInput" id="lineHeightInput">
 					</div>
 					<div class="letterSpacingBlock">
-						<span class="letterSpacingTitle">Letter-spacing:</span>
+						<span class="letterSpacingTitle">Межстрочное расстояние:</span>
 						<input class="letterSpacingInput" type="text" name="letterSpacingInput" id="letterSpacingInput">
 					</div>
 				</div>
 				<div class="updateTextColorBlock">
-					<h5 class="updateTextColorTitle">Fill</h5>
+					<h5 class="updateTextColorTitle">Заливка</h5>
 					<div class="updateFillBlock">
 						<input id="updateTextColor" class="updateTextColor" type="color">
 						<input id="updateTextColorTag" class="updateTextColorTag" type="text" value="#ff0000">
@@ -229,7 +229,7 @@
 					</div>
 				</div>
 				<div class="updatetextAlignmentBlock">
-					<h5 class="updatetextAlignmentTitle">Text alignment</h5>
+					<h5 class="updatetextAlignmentTitle">Выравнивание</h5>
 					<div class="alignments">
 						<input type="radio" name="textAlignment" id="textAlignmentLeft" value="left">
 						<label for="textAlignmentLeft" class="textAlignmentLeftBlock">
@@ -249,7 +249,7 @@
 			   </div>
 			</div>
 			<div id="updateBackgroundColorBlock" class="updateBackgroundColorBlock dissable">
-				<h5 class="updateTextColorTitle">Fill</h5>
+				<h5 class="updateTextColorTitle">Заливка</h5>
 				<div class="updateFillBlock">
 					<input id="updateBackgroundColor" class="updateBackgroundColor" type="color">
 					<input id="updateBackgroundColorTag" class="updateBackgroundColorTag" type="text" value="#ff0000">
@@ -258,34 +258,36 @@
 			<div id="updateImageBlock" class="updateImageBlock dissable">
 					<div class="changeImage">
 						<div class="displayImageBlock">
-							<input class="updateImageInput" type="file" id="updateImageInput">
-							<img class="displayImage" id="displayImage" alt="">
+							<!-- <input class="updateImageInput" type="file" id="updateImageInput"> -->
+							<img class="displayImage" id="displayImage" alt="Bad URL">
 						</div>
-						<span class="displayImageText">Поменять фото</span>
-						<!--<input id="path" class="path" type="text">-->
+						<div class="putImageBlock">
+							<span class="displayImageText">Поменять фото:</span>
+							<input id="path" class="putImage" type="text">
+						</div>
 					</div>
 					<div class="changeImageOpacity">
-						<h5 class="updateImageColorTitle">Image opacity</h5>
+						<h5 class="updateImageColorTitle">Прозрачность</h5>
 						<div class="settingsImageOpacityBlock">
 						    <img class="displayImageOpacity" id="displayImageOpacity" alt="">
 							<input id="updateImageOpacityInput" class="updateImageOpacityInput" type="text">
 						</div>
 					</div>
 					<div class="updateImageAlignmentBlock">
-						<h5 class="updateImageAlignmentTitle">Image alignment</h5>
-						<label for="updateImagePaddingLeftInput" class="updateImagePaddingLeftLabel">Padding-left</label>
+						<h5 class="updateImageAlignmentTitle">Выравнивание</h5>
+						<label for="updateImagePaddingLeftInput" class="updateImagePaddingLeftLabel">Отступ слева:</label>
 						<input id="updateImagePaddingLeftInput" class="updateImageWidthInput" type="text">
 						<br>
-						<label for="updateImagePaddingRightInput" class="updateImagePaddingRightLabel">Padding-right</label>
+						<label for="updateImagePaddingRightInput" class="updateImagePaddingRightLabel">Отступ справа:</label>
 						<input id="updateImagePaddingRightInput" class="updateImageHeightInput" type="text">
 				   </div>
 				   <div class="updateImageSize">
 					<h5 class="updateImageSizeTitle">Image size</h5>
 					<div class="settingsImageSizeBlock">
-						<label for="updateImageWidthInput" class="updateImagePaddingLeftLabel">Width</label>
+						<label for="updateImageWidthInput" class="updateImagePaddingLeftLabel">Ширина:</label>
 						<input id="updateImageWidthInput" class="updateImageWidthInput" type="text">
 						<br>
-						<label for="updateImageHeightInput" class="updateImagePaddingLeftLabel">Height</label>
+						<label for="updateImageHeightInput" class="updateImagePaddingLeftLabel">Высота:</label>
 						<input id="updateImageHeightInput" class="updateImageHeightInput" type="text">
 					</div>
 				</div>
@@ -366,7 +368,7 @@
 						<tr>
 							<td class="banner-td">
 								<a href="#">
-									<img src="./img/welcome.jpg" alt="banner" />
+									<img class="test" src="./img/welcome.jpg" alt="banner"/>
 								</a>
 							</td>
 						</tr>
@@ -553,34 +555,13 @@
 			press(numChose) {
 				this.state.content.push(mainsArray[numChose]);
 				let buff = this.state.content;
-				console.log(buff);
 				this.setState({content: buff});
-			}
-			deleter(numChose) {
-				numChose = Number(numChose);
-
-				console.log(numChose);
-				console.log(mainsArray[numChose]);
-
-				let i = 0;
-				let index;
-				this.state.content.forEach(element => {
-					let negr = mainsArray[numChose - 1].type;
-					if (element.type.name == mainsArray[numChose - 1].type.name) {
-						index = i;
-					}
-					i++;
-				});
-
-				console.log(index);
-				this.state.content.splice(index, 1);
-				let buff = this.state.content;
-				this.setState({content: buff});
+				changeMoveMode();
 			}
 			render() {
 				currentMain = this;
 				return (
-						this.state.content
+					this.state.content
 				);
 			}
 		}
@@ -632,7 +613,7 @@
 							<img className="TypeTemplateImg" src="./img/footerTemplate.png" alt="" />
 						</div>
 						<div className="typeTemplateBlock layoutTypeTemplateBlock">
-							<span className="layouts">Layouts</span>
+							<span className="layouts" >Макеты</span>
 						</div>
 					</div>
 			)
@@ -663,7 +644,6 @@
 			}
 		}
 
-		// class
 
 		function deleteTemplateOver(e) {
 			let object = e.target.closest(".template");
@@ -736,7 +716,7 @@
 				currentHeader.deleter();
 			}
 			else if (parent.classList.contains("main")) {
-				currentMain.deleter(object.classList[1].at(-1));
+				parent.removeChild(object); 
 			}
 			else if (parent.classList.contains("footer")) {
 				currentFooter.deleter();
@@ -837,7 +817,13 @@
 		function handlerMoveTemplate(e) {
 			e.preventDefault();
 
-			let activeElement = mainTemplates.querySelector(`.selected`);
+
+			let activeElement = mainTemplates.querySelector(`.selected`);	
+
+			if (!activeElement) {
+				return;
+			}
+
 			let currentElement = e.target.closest(".template");
 
 			let isMoveable = activeElement !== currentElement; // && currentElement.classList.contains(`template`);
@@ -848,6 +834,8 @@
 
 			let nextElement = getNextElement(e.clientY, currentElement);
 
+			
+
 			if (!nextElement) {
 				nextElement = mainTemplates.lastChild;
 				nextElement.after(activeElement);
@@ -857,34 +845,32 @@
 			}
 		}
 
-
-
 		header.render(
-				<CurrentHeader />
+			<CurrentHeader />
 		);
 
 		main.render(
-				<CurrentMain />
+			<CurrentMain />
 		);
 
 		footer.render(
-				<CurrentFooter />
+			<CurrentFooter />
 		);
 
 		chose.render(
-				<LoadTemplatesMenu/>
+			<LoadTemplatesMenu/>
 		);
 
 		templatesBlock.render(
-				<TemplatesBlockComponent />
+			<TemplatesBlockComponent />
 		);
 
 		removeTemplateBlock.render(
-				<button onClick={RemoveTemplateHandler} class="removeTemplateButton" id="removeTemplateButton" type="button">Remove templates mode</button>
+			<button onClick={RemoveTemplateHandler} class="removeTemplateButton" id="removeTemplateButton" type="button">Remove templates mode</button>
 		);
 
 		dragTemplateBlock.render(
-				<button class="dragTemplateButton" id="dragTemplateButton" type="button">Move templates mode</button>
+			<button class="dragTemplateButton" id="dragTemplateButton" type="button">Move templates mode</button>
 		);
 
 
