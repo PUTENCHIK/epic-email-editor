@@ -24,17 +24,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let btn_save = document.getElementsByClassName("button-save")[0];
     btn_save.addEventListener("click", () => {
-        let redactor = document.getElementsByClassName("letter")[0];
+        let redactor = document.getElementsByClassName("footer")[0];
 
-        let letter_html = redactor.parentElement.innerHTML;
+        let letter_html = redactor.outerHTML;
         console.log(redactor);
+        console.log(letter_html);
         let storage = JSON.parse(localStorage['emailwizard']);
         let letters = storage['letters'];
 
         for (let i = 0; i < letters.length; i++) {
             if (letters[i]['id'] === storage['current_letter']) {
                 storage['letters'][i]['html'] = letter_html;
-                break;
+                                break;
             }
         }
 

@@ -230,7 +230,7 @@ function createNewElement(id, title) {
     let letter = getLetterFromStorage(id);
 
     if (letter && letter['html']) {
-        email_body.innerHTML = letter['html'];
+        email_body.insertAdjacentHTML("beforeend", letter['html']);
         email_body.classList.add("scaled");
     }
     else {

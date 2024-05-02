@@ -153,6 +153,7 @@ img.icon {
 }
 
 .email-body {
+    width: calc(100% - 30px);
     padding: 15px;
 }
 
