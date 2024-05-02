@@ -1,6 +1,6 @@
 body{
     margin: 0px;
-    background: url("img/MainBackground.png") no-repeat center center fixed;
+    background: url("../img/MainBackground.png") no-repeat center center fixed;
     background-size: 100% 100%;                  /* changes */
     /*background-image: url('1.jpg');*/
     /*background-size: cover;*/

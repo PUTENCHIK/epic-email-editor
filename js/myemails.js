@@ -204,14 +204,14 @@ function createNewElement(id, title) {
     redact_box.className = "redact button button-icon";
     let redact_icon = document.createElement("img");
     redact_icon.className = "icon";
-    redact_icon.src = "img/pencil-icon.png";
+    redact_icon.src = "../img/pencil-icon.png";
     redact_icon.alt = "redact letter";
 
     let delete_box = document.createElement("div");
     delete_box.className = "delete button button-icon";
     let delete_icon = document.createElement("img");
     delete_icon.className = "icon";
-    delete_icon.src = "img/bin-icon.png";
+    delete_icon.src = "../img/bin-icon.png";
     delete_icon.alt = "delete letter";
 
     let hidden_input = document.createElement("input");
