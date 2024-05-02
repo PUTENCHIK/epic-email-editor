@@ -1,5 +1,5 @@
 body{
-    margin: 0px;
+    margin: 0;
     background: url("../img/MainBackground.png") no-repeat center center fixed;
     background-size: 100% 100%;                  /* changes */
     /*background-image: url('1.jpg');*/
@@ -19,7 +19,7 @@ body{
     color:rgb(255, 255, 255);
 }
 
-.main{
+div.main{
     margin-top: 70px;
     margin-bottom: 80px;
     width: 85%;
@@ -159,4 +159,86 @@ img.icon {
 
 .email-body.scaled {
     transform: scale(0.4935);
+}
+
+body {
+    width: 100% !important;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    padding: 0;
+    line-height: 100%;
+}
+
+img {
+    outline: none;
+    text-decoration: none;
+    border: none;
+    -ms-interpolation-mode: bicubic;
+    max-width: 100%!important;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+table td {
+    border-collapse: collapse;
+}
+
+table {
+    border-collapse: collapse;
+    mso-table-lspace: 0;
+    mso-table-rspace: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu td {
+    padding-left: 30px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.header-td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.greetings {
+    padding-top: 40px;
+    padding-bottom: 16px;
+}
+
+.greetings hr {
+    width: 80px;
+    border-color: #ccad53;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.thanks {
+    padding-bottom: 24px;
+}
+
+.confirmButton {
+    padding-bottom: 56px;
+}
+
+.footerLogo {
+    width: 110px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.logoBlock {
+    height: 75px;
+}
+
+.menuBlock {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }

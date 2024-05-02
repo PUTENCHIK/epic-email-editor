@@ -1,0 +1,86 @@
+body {
+    width: 100% !important;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+}
+
+[style*="Open Sans"] {
+    font-family: 'Open Sans', arial, sans-serif !important;
+}
+
+img {
+    outline: none;
+    text-decoration: none;
+    border:none;
+    -ms-interpolation-mode: bicubic;
+    max-width: 100%!important;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+table td {
+    border-collapse: collapse;
+}
+
+table {
+    border-collapse: collapse;
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu td {
+    padding-left: 30px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.header-td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.greetings {
+    padding-top: 40px;
+    padding-bottom: 16px;
+}
+
+.greetings hr {
+    width: 80px;
+    border-color: #ccad53;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.thanks {
+    padding-bottom: 24px;
+}
+
+.confirmButton {
+    padding-bottom: 56px;
+}
+
+.footerLogo {
+    width: 110px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.logoBlock {
+    height: 75px;
+}
+
+.menuBlock {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
