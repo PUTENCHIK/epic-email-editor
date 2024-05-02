@@ -195,13 +195,13 @@ function TemplatesBlockComponent() {
     return (
         <div className="typesTemplates" id="typesTemplates">
             <div onClick={LoadTemplatesMenuHandler} className="typeTemplateBlock headerTypeTemplateBlock">
-                <img className="TypeTemplateImg" src="../img/headerTemplate.png" alt="" />
+                <img className="TypeTemplateImg" src="./img/headerTemplate.png" alt="" />
             </div>
             <div onClick={LoadTemplatesMenuHandler} className="typeTemplateBlock mainTypeTemplateBlock">
-                <img className="TypeTemplateImg" src="../img/mainTemplate.png" alt="" />
+                <img className="TypeTemplateImg" src="./img/mainTemplate.png" alt="" />
             </div>
             <div onClick={LoadTemplatesMenuHandler} className="typeTemplateBlock footerTypeTemplateBlock">
-                <img className="TypeTemplateImg" src="../img/footerTemplate.png" alt="" />
+                <img className="TypeTemplateImg" src="./img/footerTemplate.png" alt="" />
             </div>
             <div className="typeTemplateBlock layoutTypeTemplateBlock">
                 <span className="layouts">Layouts</span>

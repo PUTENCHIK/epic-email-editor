@@ -138,10 +138,7 @@
 				<div id="templatesBlockBuff" class="templatesBlockBuff">
 
 				</div>
-				<div id="removeTemplateBlock">
-					
-				</div>
-				<div id="dragTemplateBlock">
+				<div id="changeTemplatesBlock">
 					
 				</div>
 			</div>
@@ -216,7 +213,7 @@
 						<input class="lineHeightInput" type="text" name="lineHeightInput" id="lineHeightInput">
 					</div>
 					<div class="letterSpacingBlock">
-						<span class="letterSpacingTitle">Межстрочное расстояние:</span>
+						<span class="letterSpacingTitle">Строчное расстояние:</span>
 						<input class="letterSpacingInput" type="text" name="letterSpacingInput" id="letterSpacingInput">
 					</div>
 				</div>
@@ -298,7 +295,7 @@
 	<script type="text/babel">
 		function Header1() {
 			return (
-				<table className="template" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+				<table className="template header1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
 					<tr>
 						<td align={"center"} height={"75px"} bgcolor={"#333333"}>
 							<img align={"center"} src={"../img/logoFashion.png"} width={"160px"}/>
@@ -330,7 +327,7 @@
 
 		function Header2() {
 			return (
-					<table className="template" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<table className="template header2" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
 						<tr>
 							<td bgcolor="white" class="header-td">
 								<table class="table-550" cellpadding="0" cellspacing="0" width="550" bgcolor="white" align="center">
@@ -407,7 +404,7 @@
 
 		function Footer1() {
 			return (
-					<table className="template" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<table className="template footer1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
 						<tr>
 							<td bgcolor="#FFFFFF" align="center">
 								<hr bgcolor="#cccccc" width="525"/>
@@ -441,11 +438,9 @@
 		const templatesBlockBuffNode = document.getElementById("templatesBlockBuff");
 		const templatesBlock = ReactDOM.createRoot(templatesBlockBuffNode);
 
-		const removeTemplateBlockNode = document.getElementById("removeTemplateBlock");
-		const removeTemplateBlock = ReactDOM.createRoot(removeTemplateBlockNode);
+		const changeTemplatesBlockNode = document.getElementById("changeTemplatesBlock");
+		const changeTemplatesBlock = ReactDOM.createRoot(changeTemplatesBlockNode);
 
-		const dragTemplateBlockNode = document.getElementById("dragTemplateBlock");
-		const dragTemplateBlock = ReactDOM.createRoot(dragTemplateBlockNode);
 
 		let letterReact = document.getElementById("letter");
 		let removeMode = false;
@@ -611,9 +606,6 @@
 						</div>
 						<div onClick={LoadTemplatesMenuHandler} className="typeTemplateBlock footerTypeTemplateBlock">
 							<img className="TypeTemplateImg" src="../img/footerTemplate.png" alt="" />
-						</div>
-						<div className="typeTemplateBlock layoutTypeTemplateBlock">
-							<span className="layouts" >Макеты</span>
 						</div>
 					</div>
 			)
@@ -786,8 +778,6 @@
 			}
 		}
 
-		dragTemplateBlockNode.addEventListener("click", changeMoveMode);
-
 		mainTemplates.addEventListener(`dragstart`, e => {
 			let object = e.target.closest(".template");
 
@@ -865,19 +855,19 @@
 			<TemplatesBlockComponent />
 		);
 
-		removeTemplateBlock.render(
-			<button onClick={RemoveTemplateHandler} class="removeTemplateButton" id="removeTemplateButton" type="button">Remove templates mode</button>
-		);
-
-		dragTemplateBlock.render(
-			<button class="dragTemplateButton" id="dragTemplateButton" type="button">Move templates mode</button>
+		changeTemplatesBlock.render(
+			<div className="changeTemplatesBlockWrapper">
+				<button onClick={RemoveTemplateHandler} class="removeTemplateButton" id="removeTemplateButton" type="button">Удалить</button>
+				<button onClick={changeMoveMode} class="dragTemplateButton" id="dragTemplateButton" type="button">Переместить</button>
+			</div>
+			
 		);
 
 
 	</script>
 	<script src="../js/app.js"></script>
-	<script src="../js/my-script.js"></script>
-	<script src="../js/redirect.js"></script>
+	 <script src="../js/my-script.js"></script>
+	 <script src="../js/redirect.js"></script>
 </body>
 
 </html>

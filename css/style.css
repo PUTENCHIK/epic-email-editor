@@ -129,11 +129,12 @@ header {
 
 .workboard {
     background-color: #ffffff;
-    width: 50%;
+    width: 53%;
     padding-top: 50px;
     border-radius: 10px;
     padding-bottom: 50px;
     margin: 0 auto;
+    margin-left: 22%;
     border: 2px solid #396462;
 }
 
@@ -174,7 +175,6 @@ header {
 
 .typesTemplates {
     width: 118px;
-    height: 364px;
     border: 3px solid #04504D;
     background-color: #ffffff;              /* changes */
     border-radius: 30px;
@@ -195,6 +195,12 @@ header {
 
 .headerTypeTemplateBlock, .mainTypeTemplateBlock, .footerTypeTemplateBlock {
     border-bottom: 2px solid #07706d;
+}
+
+.footerTypeTemplateBlock {
+    border-bottom: none;
+    border-radius: 0px 0px 28px 28px;
+    height: 94px;
 }
 
 .headerTypeTemplateBlock {
@@ -334,6 +340,10 @@ header {
     font-family: Inter;
     font-weight: 600;
     margin-right: 12px;
+}
+
+.letterSpacingTitle {
+    display: inline;
 }
 
 .fontSizeTitle {
@@ -568,20 +578,6 @@ input[type="radio"] {
     background-color: #E85A4F;
 }
 
-.removeTemplateButton, .dragTemplateButton {
-    width: 100px;
-    background: none;                                   /* changes */
-    border: 3px solid #04504D;
-    border-radius: 10px;
-    color:red;
-    font-size: 17px;
-    margin-bottom: 10px;
-}
-
-.dragTemplateButton {
-    color: blue;
-    margin-bottom: 0px;
-}
 
 .removeTemplateButton:hover, .dragTemplateButton:hover {
     /* box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.4) inset; */
@@ -617,4 +613,54 @@ input[type="radio"] {
 
 .good {
     border: 2px solid #7dbd4d;
+}
+
+.changeTemplatesBlockWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 181px;
+    height: 123px;
+    background-color: white;
+    border-radius: 30px;
+    border: 3px solid #04504D;
+    box-shadow: 2px 4px 4px 0px rgba(34, 60, 80, 0.2);
+    margin-left: 15%;
+}
+/* 
+.removeTemplateButton, .dragTemplateButton {
+    width: 100px;
+    background: none;
+    border: 3px solid #04504D;
+    border-radius: 10px;
+    color:red;
+    font-size: 17px;
+    margin-bottom: 10px;
+} */
+
+.removeTemplateButton, .dragTemplateButton {
+    width: 181px;
+    height: 62px;
+    border-radius: 27px 27px 0px 0px;
+    border: none;
+    color: #034240;
+    font-size: 16px;
+    font-family: Inter;
+    text-align: left;
+    padding: 19px;
+    background-color: white;
+    font-weight: 600;
+    border-bottom: 2px solid #04504D;
+}
+
+.dragTemplateButton {
+    border-radius: 0px 0px 27px 27px;
+    border-bottom: none;
+}
+
+.__text {
+    font-size: 18px;
+}
+
+.letter-name {
+    font-size: 20px;
 }

@@ -3,7 +3,7 @@ function Header1() {
         <table className="template" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>             
             <tr>
                 <td align={"center"} height={"75px"} bgcolor={"#333333"}>
-                    <img align={"center"} src={"../img/logoFashion.png"} width={"160px"}/>
+                    <img align={"center"} src={"./img/logoFashion.png"} width={"160px"}/>
                 </td>
             </tr>
             <tr>
@@ -46,7 +46,7 @@ function Header2() {
                                 </table>
                             </td>
                             <td align="center">
-                                <img class="logo" src="../img/logo.png" alt="logo"/>
+                                <img class="logo" src="./img/logo.png" alt="logo"/>
                             </td>
                             <td>
                                 <table align="center" class="menu rightMenu" cellpadding="0" cellspacing="0">
@@ -70,7 +70,7 @@ function Main1() {
         <tr>
             <td class="banner-td">
                 <a href="#">
-                    <img src="../img/welcome.jpg" alt="banner" />
+                    <img src="./img/welcome.jpg" alt="banner" />
                 </a>
             </td>
         </tr>
@@ -109,7 +109,7 @@ function Main2() {
 
 function Footer1() {
     return (
-        <table className="template" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>  
+        <table className="template footer1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>  
             <tr>
                 <td bgcolor="#FFFFFF" align="center">
                     <hr bgcolor="#cccccc" width="525"/>
@@ -117,7 +117,7 @@ function Footer1() {
             </tr>
             <tr>
                 <td align="center" bgcolor="#FFFFFF">
-                    <img className="footerLogo" src="../img/logo.png" alt="logo"/>
+                    <img className="footerLogo" src="./img/logo.png" alt="logo"/>
                 </td>
             </tr>
             <tr>
@@ -126,5 +126,5 @@ function Footer1() {
                 </td>
             </tr>
         </table>
-    )
+    );
 }
