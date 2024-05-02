@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
         table.cellSpacing = "0";
         table.style.width = "600";
         table.align = "center";
+        let tbody = document.createElement("tbody");
         let tr_header = document.createElement("tr");
         tr_header.className = "header";
         tr_header.id = "header";
@@ -18,9 +19,10 @@ window.addEventListener("DOMContentLoaded", () => {
         tr_footer.className = "footer";
         tr_footer.id = "footer";
 
-        table.append(tr_header);
-        table.append(tr_main);
-        table.append(tr_footer);
+        tbody.append(tr_header);
+        tbody.append(tr_main);
+        tbody.append(tr_footer);
+        table.append(tbody);
 
         return table;
     }
@@ -28,19 +30,22 @@ window.addEventListener("DOMContentLoaded", () => {
     function readLetterContent() {
         let templates = document.getElementsByClassName("mainTable")[0].getElementsByClassName("template");
         let table = createMainTable();
-        let header, footer, mainers = [];
-        console.log(table.outerHTML);
+        let blocks = ["header", "main", "footer"];
         for (let i = 0; i < templates.length; i++) {
-            if (templates[i].className.includes("header")) {
-                //
-            }
-            else if (templates[i].className.includes("main")) {
-                //
-            }
-            else if (templates[i].className.includes("footer")) {
-                //
+            for (let j = 0; j < blocks.length; j++) {
+                if (templates[i].className.includes(blocks[j])) {
+                    let cell = document.createElement("td");
+                    let block = table.getElementsByClassName(blocks[j])[0];
+                    let template = templates[i];
+                    cell.innerHTML = template.outerHTML;
+
+                    block.append(cell);
+                }
             }
         }
+        // console.log(table);
+        // console.log(table.outerHTML);
+        return table.outerHTML;
     }
 
     const header = document.getElementsByTagName("header")[0];
@@ -67,9 +72,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let btn_save = document.getElementsByClassName("button-save")[0];
     btn_save.addEventListener("click", () => {
-        readLetterContent()
-        let letter = document.getElementsByClassName("mainTable")[0];
-        let letter_html = letter.innerHTML;
+        let letter_html = readLetterContent();
         // console.log(letter_html);
 
         let storage = JSON.parse(localStorage['emailwizard']);
