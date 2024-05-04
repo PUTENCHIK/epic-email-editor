@@ -49,6 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 block.remove();
             }
         }
+        table.classList.add("from-storage");
         return table.outerHTML;
     }
 
@@ -72,6 +73,7 @@ window.addEventListener("DOMContentLoaded", () => {
     btn_save.addEventListener("click", () => {
         let letter_html = readLetterContent();
         MyLocalStorage.set_html_current_letter(letter_html);
+        // window.location.href="../html/index.html";
     });
 
 });

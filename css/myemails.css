@@ -1,3 +1,5 @@
+@import "common.css";
+
 body{
     margin: 0;
     background: url("../img/MainBackground.png") no-repeat center center fixed;
@@ -118,7 +120,7 @@ img{
     height: 30%;
     background-color: white; /* белый цвет с небольшим прозрачным оттенком */
     z-index: 9999; /* поверх всех остальных элементов */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 2); /* тень */
+    box-shadow: 0 0 10px rgba(148, 46, 9, 0.452); /* тень */
     margin-left: 35%;
     margin-top: 200px;
     border: 3px solid orangered;
@@ -128,6 +130,8 @@ img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    font-family: Arial;
 }
 
 img.icon {
@@ -161,84 +165,99 @@ img.icon {
     transform: scale(0.4935);
 }
 
-body {
-    width: 100% !important;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    padding: 0;
-    line-height: 100%;
+.save{
+    padding: 10px;
+    background-color: green;
+    border-radius: 20px;
+    border: 2px darkgreen solid;
+    color: white;
+    width: 20%;
+
 }
 
-img {
-    outline: none;
-    text-decoration: none;
-    border: none;
-    -ms-interpolation-mode: bicubic;
-    max-width: 100%!important;
-    margin: 0;
-    padding: 0;
-    display: block;
+.close{
+    padding: 10px;
+    background-color: gray;
+    border-radius: 20px;
+    border: 2px rgb(98, 98, 98) solid;
+    color: white;
+    width: 20%;
+
 }
 
-table td {
-    border-collapse: collapse;
+.buttns{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }
 
-table {
-    border-collapse: collapse;
-    mso-table-lspace: 0;
-    mso-table-rspace: 0;
+input.title {
+    padding: 15px;
+    border: 2px rgb(0, 81, 0) solid;
+    border-radius: 30px;
+    width: 60%;
+    color: darkgreen;
+    margin-bottom: 30px;
 }
 
-.menu a {
-    text-decoration: none;
-    color: black;
+.save:hover{
+    background-color: rgb(0, 95, 0);
+
 }
 
-.menu td {
-    padding-left: 30px;
+.close:hover{
+    background-color: rgb(98, 98, 98);
 }
 
-.logo {
-    width: 150px;
+.disable {
+    display: none;
 }
 
-.header-td {
-    padding-top: 16px;
-    padding-bottom: 16px;
-}
-
-.greetings {
+.delWindow {
+    /*background-color: #ffffff;
+    border-radius: 9px;
+    border: 1px solid black;
+    display: flex;
+    width: 30%;
+    height: 30%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;*/
+    font-family: "Inter";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 30%;
+    background-color: white; /* белый цвет с небольшим прозрачным оттенком */
+    z-index: 9999; /* поверх всех остальных элементов */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 2); /* тень */
+    margin-left: 35%;
+    margin-top: 200px;
+    border: 3px solid orangered;
+    border-radius: 20px;
     padding-top: 40px;
-    padding-bottom: 16px;
+    text-align: center;
+
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.greetings hr {
-    width: 80px;
-    border-color: #ccad53;
-    border-width: 2px;
-    border-style: solid;
+.phrase {
+    font-family: "Inter" !important;
+    margin-bottom: 50px;
 }
 
-.thanks {
-    padding-bottom: 24px;
+.btns {
+    display: flex;
+    justify-content: space-around;
 }
 
-.confirmButton {
-    padding-bottom: 56px;
-}
-
-.footerLogo {
-    width: 110px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-}
-
-.logoBlock {
-    height: 75px;
-}
-
-.menuBlock {
-    padding-top: 20px;
-    padding-bottom: 20px;
+.yes-btn {
+    background-color: red;
+    color: white;
+    border: 1px solid rgb(158, 158, 158);
+    border-radius: 10%;
 }

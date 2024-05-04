@@ -1,0 +1,17 @@
+body, input, button, div {
+    font-family: Arial !important;
+}
+
+.from-storage tr.main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table-600 {
+    width: 600px;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}

@@ -49,17 +49,10 @@
 	<main>
 		<div class="leftBlock">
 			<div id="templatesBlock" class="templatesBlock">
-				<div id="templatesBlockBuff" class="templatesBlockBuff">
-
-				</div>
-				<div id="changeTemplatesBlock">
-					
-				</div>
+				<div id="templatesBlockBuff" class="templatesBlockBuff"></div>
+				<div id="changeTemplatesBlock"></div>
 			</div>
-			
-			<div class="choseMenu dissable" id="choseMenu">
-
-			</div>
+			<div class="choseMenu dissable" id="choseMenu"></div>
 		</div>
 
 		<div class="workboard">
@@ -749,33 +742,42 @@
 			}
 		}
 
-		header.render(
-			<CurrentHeader />
-		);
+		// Рендер только если в хранилище не сохранён html текущего письма
 
-		main.render(
-			<CurrentMain />
-		);
+        changeTemplatesBlock.render(
+            <div className="changeTemplatesBlockWrapper">
+                <button onClick={RemoveTemplateHandler} class="removeTemplateButton" id="removeTemplateButton" type="button">Удалить</button>
+                <button onClick={changeMoveMode} class="dragTemplateButton" id="dragTemplateButton" type="button">Переместить</button>
+            </div>
+        );
 
-		footer.render(
-			<CurrentFooter />
-		);
+		if (MyLocalStorage.get_current_letter()['html']) {
+            console.log("Upload current letter");
 
-		chose.render(
-			<LoadTemplatesMenu/>
-		);
+            let mainTable = document.getElementsByClassName("mainTable")[0];
+            mainTable.outerHTML = MyLocalStorage.get_current_letter()['html'];
+		} else {
+            console.log("Upload default letter");
+            header.render(
+                <CurrentHeader />
+            );
 
-		templatesBlock.render(
-			<TemplatesBlockComponent />
-		);
+            main.render(
+                <CurrentMain />
+            );
 
-		changeTemplatesBlock.render(
-			<div className="changeTemplatesBlockWrapper">
-				<button onClick={RemoveTemplateHandler} class="removeTemplateButton" id="removeTemplateButton" type="button">Удалить</button>
-				<button onClick={changeMoveMode} class="dragTemplateButton" id="dragTemplateButton" type="button">Переместить</button>
-			</div>
-			
-		);
+            footer.render(
+                <CurrentFooter />
+            );
+
+            templatesBlock.render(
+                <TemplatesBlockComponent />
+            );
+
+            chose.render(
+                <LoadTemplatesMenu/>
+            );
+		}
 
 
 	</script>

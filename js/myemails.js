@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
     } catch {
         //
     }
+    MyLocalStorage.set_current_letter(null);
     renderLetters();
 
     function renderLetters() {
@@ -56,18 +57,51 @@ window.addEventListener("DOMContentLoaded", () => {
         delete_icon.src = "../img/bin-icon.png";
         delete_icon.alt = "delete letter";
 
+        let delWind = document.createElement("div");
+        delWind.className = "disable";
+
+        let phrase = document.createElement("p");
+        phrase.className = "phrase";
+
+        let btns = document.createElement("div");
+        btns.className = "btns";
+
+        let noBtn = document.createElement("button");
+        let yesBtn = document.createElement("button");
+        yesBtn.className = "yes-btn";
+
+        noBtn.innerText = "Нет";
+        yesBtn.innerText = "Да";
+        phrase.innerText = "Вы действительно хотите удалить это письмо?";
+
         let hidden_input = document.createElement("input");
         hidden_input.type = "hidden";
         hidden_input.name = "email-" + id;
 
         redact_box.addEventListener("click", () => {
             MyLocalStorage.set_current_letter(id);
-            window.location.href = "index.html";
+            window.location.href = "../html/index.html";
         });
 
-        delete_box.addEventListener("click", () => {
-            deleteLetter(id);
+        delete_box.addEventListener('click', function() {
+            delWind.classList.remove("disable");
+            delWind.classList.add("delWindow");
         });
+
+        yesBtn.addEventListener("click", () => {
+            deleteLetter(id);
+            delWind.classList.add("disable");
+            delWind.classList.remove("delWindow");
+        });
+
+        noBtn.addEventListener("click", () => {
+            delWind.classList.add("disable");
+            delWind.classList.remove("delWindow");
+        });
+
+        // delete_box.addEventListener("click", () => {
+        //     deleteLetter(id);
+        // });
 
         let letter = MyLocalStorage.get_letter(id);
 
@@ -88,6 +122,11 @@ window.addEventListener("DOMContentLoaded", () => {
         email_box.append(email_head);
         email_box.append(email_body);
         email_box.append(hidden_input);
+        delWind.append(phrase);
+        btns.append(noBtn);
+        btns.append(yesBtn);
+        delWind.append(btns);
+        email_box.append(delWind);
 
         return email_box;
     }
