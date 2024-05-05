@@ -5,7 +5,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>EmailWizard</title>
 	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/my-style.css">
 	<link rel="stylesheet" href="../css/letter-settings.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +21,7 @@
 
 <body style="margin: 0; padding: 0;">
 	<input id="mainInputText" autofocus type="text" class="mainInputText dissable">
-	<header>
+	<div class="page-header">
 		<div class="letter-name">
 			ProjectName
 		</div>
@@ -44,7 +43,7 @@
 				</div>
 			</div>
 		</div>
-	</header>
+	</div>
 
 	<main>
 		<div class="leftBlock">
@@ -205,7 +204,7 @@
 				<table className="template header1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
 					<tr>
 						<td align={"center"} height={"75px"} bgcolor={"#333333"}>
-							<img align={"center"} src={"../img/logoFashion.png"} width={"160px"}/>
+							<img align={"center"} src={"../img/logoFashion.png"} style={{width: "160px"}}/>
 						</td>
 					</tr>
 					<tr>
@@ -248,7 +247,7 @@
 											</table>
 										</td>
 										<td align="center">
-											<img class="logo" src="../img/logo.png" alt="logo"/>
+											<img style={{width: "150px"}} src="../img/logo.png" alt="logo"/>
 										</td>
 										<td>
 											<table align="center" class="menu rightMenu" cellpadding="0" cellspacing="0">
@@ -272,7 +271,7 @@
 						<tr>
 							<td class="banner-td">
 								<a href="#">
-									<img class="test" src="../img/welcome.jpg" alt="banner"/>
+									<img style={{width: "600px"}} src="../img/welcome.jpg" alt="banner"/>
 								</a>
 							</td>
 						</tr>
@@ -311,23 +310,23 @@
 
 		function Footer1() {
 			return (
-					<table className="template footer1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-						<tr>
-							<td bgcolor="#FFFFFF" align="center">
-								<hr bgcolor="#cccccc" width="525"/>
-							</td>
-						</tr>
-						<tr>
-							<td align="center" bgcolor="#FFFFFF">
-								<img className="footerLogo" src="../img/logo.png" alt="logo"/>
-							</td>
-						</tr>
-						<tr>
-							<td align="center" bgcolor="#FFFFFF" className="why">
-								<p style={{color: "#666666", fontSize: "13px", fontFamily: "'Times New Roman', Times, serif"}}>You are receiving this email because you have visited our site or asked us about regular newsletter.</p>
-							</td>
-						</tr>
-					</table>
+				<table className="template footer1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<tr>
+						<td bgcolor="#FFFFFF" align="center">
+							<hr bgcolor="#cccccc" width="525"/>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" bgcolor="#FFFFFF">
+							<img style={{width: "110px", paddingTop: "16px", paddingBottom: "16px"}} src="../img/logo.png" alt="logo"/>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" bgcolor="#FFFFFF" className="why">
+							<p style={{color: "#666666", fontSize: "13px", fontFamily: "'Times New Roman', Times, serif"}}>You are receiving this email because you have visited our site or asked us about regular newsletter.</p>
+						</td>
+					</tr>
+				</table>
 			)
 		}
 	</script>
@@ -348,14 +347,8 @@
 		const changeTemplatesBlockNode = document.getElementById("changeTemplatesBlock");
 		const changeTemplatesBlock = ReactDOM.createRoot(changeTemplatesBlockNode);
 
-
 		let letterReact = document.getElementById("letter");
 		let removeMode = false;
-
-
-		let mainTable = document.getElementById("mainTable");
-		let mainTemplates = document.getElementById("main");
-
 
 		let currentHeader;
 		let currentMain;
@@ -458,7 +451,12 @@
 				this.state.content.push(mainsArray[numChose]);
 				let buff = this.state.content;
 				this.setState({content: buff});
-				changeMoveMode();
+				if (dragTemplateButton.classList.contains("pressed")) {
+					changeMoveMode();
+				}
+				if (removeTemplateButton.classList.contains("pressed")) {
+					RemoveTemplateHandler();
+				}
 			}
 			render() {
 				currentMain = this;
@@ -546,7 +544,6 @@
 
 		function deleteTemplateOver(e) {
 			let object = e.target.closest(".template");
-
 			if (e.relatedTarget) {
 				if (object == e.relatedTarget.closest(".template")) {
 					return;
@@ -573,11 +570,11 @@
 			}
 		}
 
-
 		function moveTemplateOver(e) {
 			let object = e.target.closest(".template");
 
-			if (object.parentElement.classList.contains("header") || object.parentElement.classList.contains("footer")) {
+			if (object.parentElement.classList.contains("header") || object.parentElement.classList.contains("footer")
+			 	|| object.parentElement.parentElement.classList.contains("header") || object.parentElement.parentElement.classList.contains("footer")) {
 				return;
 			}
 
@@ -610,8 +607,13 @@
 		function handleDeleteClick(e) {
 			let object = e.target.closest(".template")
 			let parent = object.parentElement;
+			let mainTable = document.getElementsByClassName("mainTable")[0];
 
-			if (parent.classList.contains("header")) {
+			if (mainTable.classList.contains("from-storage")) {
+				parent.removeChild(object); 
+			}
+			else {
+				if (parent.classList.contains("header")) {
 				currentHeader.deleter();
 			}
 			else if (parent.classList.contains("main")) {
@@ -620,11 +622,13 @@
 			else if (parent.classList.contains("footer")) {
 				currentFooter.deleter();
 			}
+			}
 		}
 
 		function RemoveTemplateHandler() {
 			let removeTemplateButton = document.getElementById("removeTemplateButton");
 			let dragTemplateButton = document.getElementById("dragTemplateButton");
+			let mainTable = document.getElementsByClassName("mainTable")[0];
 
 			if (removeMode) {
 				removeMode = false;
@@ -640,6 +644,7 @@
 				}
 
 				removeMode = true;
+
 				mainTable.addEventListener("mouseover", deleteTemplateOver);
 				mainTable.addEventListener("mouseout", deleteTemplateOut);
 				removeTemplateButton.classList.add("pressed");
@@ -650,9 +655,11 @@
 
 		// drag
 		function changeMoveMode() {
+			let mainTemplates = document.getElementById("main");
 			let dragElements = mainTemplates.querySelectorAll(".template");
 			let removeTemplateButton = document.getElementById("removeTemplateButton");
 			let dragTemplateButton = document.getElementById("dragTemplateButton");
+			let mainTable = document.getElementsByClassName("mainTable")[0];
 
 			if (moveMode) {
 				moveMode = false;
@@ -681,24 +688,28 @@
 					dragElements[i].draggable = true;
 				}
 
+
+
 				mainTemplates.addEventListener(`dragover`, handlerMoveTemplate);
+
+				mainTemplates.addEventListener(`dragstart`, e => {
+					let object = e.target.closest(".template");
+
+					if (object.draggable === true) {
+						object.classList.add(`selected`);
+					}
+
+				});
+
+				mainTemplates.addEventListener(`dragend`, e => {
+					let object = e.target.closest(".template");
+
+					object.classList.remove(`selected`);
+				});
 			}
 		}
 
-		mainTemplates.addEventListener(`dragstart`, e => {
-			let object = e.target.closest(".template");
 
-			if (object.draggable === true) {
-				object.classList.add(`selected`);
-			}
-
-		});
-
-		mainTemplates.addEventListener(`dragend`, e => {
-			let object = e.target.closest(".template");
-
-			object.classList.remove(`selected`);
-		});
 
 		let getNextElement = (cursorPosition, currentElement) => {
 			let currentElementCoord = currentElement.getBoundingClientRect();
@@ -714,8 +725,8 @@
 		function handlerMoveTemplate(e) {
 			e.preventDefault();
 
-
-			let activeElement = mainTemplates.querySelector(`.selected`);	
+			let mainTemplates = document.getElementById("main");
+			let activeElement = mainTemplates.querySelector(`.selected`);
 
 			if (!activeElement) {
 				return;
@@ -723,15 +734,13 @@
 
 			let currentElement = e.target.closest(".template");
 
-			let isMoveable = activeElement !== currentElement; // && currentElement.classList.contains(`template`);
 
+			let isMoveable = activeElement !== currentElement;
 			if (!isMoveable) {
 				return;
 			}
 
 			let nextElement = getNextElement(e.clientY, currentElement);
-
-			
 
 			if (!nextElement) {
 				nextElement = mainTemplates.lastChild;

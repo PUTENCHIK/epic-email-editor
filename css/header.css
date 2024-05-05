@@ -1,24 +1,32 @@
-@import "common.css";
-
-header {
+.page-header {
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 80px;
+
     padding: 0 25px;
 
+    background-color: #034240;
+    font-size: 30px;
     font-family: "Inter";
 }
 
-header > .letter-name {
+.page-header.for-myemails {
+    width: calc(100% - 50px);
+}
+
+.page-header > .letter-name, .page-header > .header-name {
     position: relative;
     font-size: 26px;
     color: #ffffff;
     margin: 0 auto;
 }
 
-header > .header-content {
+.page-header > .header-content {
     position: absolute;
-    display: flex;
     width: calc(100% - 50px);
+    margin: 0 auto;
+    display: flex;
 }
 
 .header-content > .header-elements-group {
@@ -38,34 +46,7 @@ header > .header-content {
     margin-right: 20px;
 }
 
-.button {
-    display: flex;
-    align-items: center;
-    user-select: none;
-    background-color: #ffffff;
-
-    border-radius: 10px;
-}
-
-.button:hover {
-    background-color: #D9D9D9;
-}
-
-.button-icon {
-    padding: 8px;
-}
-
-.button-text {
-    padding: 10px 20px;
-}
-
-.primary-button {
-    background-color: #F14925;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.primary-button:hover {
-    background-color: #f15b3b;
+.logo-box > img {
+    width: 75px;
+    height: 75px;
 }

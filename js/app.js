@@ -52,22 +52,20 @@ let editingText = false;
 let editingImage = false;
 let editingBlock = false;
 
-// Новое! Элементы для левой части редактора
 let choseMenu = document.getElementById("choseMenu");
 
 let templatesBlockBuff = document.getElementById("templatesBlockBuff");
 let moveMode = false;
-
+let mainTableBlock = document.getElementsByClassName("mainTable");
 let removeTemplate = document.getElementById("removeTemplateBlock");
 
 
 function componentToHex(c) {
-    var hex = c.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
+    var hex = c.toString();
+    return hex.length === 1 ? "0" + hex : hex;
 }
   
 function rgbToHex(rgbString) {
-    console.log(rgbString);
     const [r, g, b] = rgbString.match(/\d+/g).map(Number);
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
@@ -219,8 +217,7 @@ letter.addEventListener('click', e => {
         }
 
         editingText = true;
-    }
-    
+    }  
     else if (object.tagName === "IMG" && letter.contains(object)) {
         currentObject = object;
         editingImage = true;
@@ -276,8 +273,7 @@ letter.addEventListener('click', e => {
         };
         
     }
-
-    else if (object.tagName === "TD" && mainTable.contains(object)) {
+    else if (object.tagName === "TD" && mainTableBlock[0].contains(object)) {
         editingBlock = true;
 
         currentObject = object;
@@ -336,8 +332,15 @@ fontFamilyInput.addEventListener("change", e => {
 });
 
 fontSizeInput.addEventListener("change", e => {
-    currentObject.style.fontSize = fontSizeInput.value;
-    mainInputText.style.fontSize = fontSizeInput.value;
+    if (parseInt(fontSizeInput.value.match(/\d+/)) > 46) {
+        currentObject.style.fontSize = "46px";
+        mainInputText.style.fontSize = "46px";
+    }
+    else {
+        currentObject.style.fontSize = fontSizeInput.value;
+        mainInputText.style.fontSize = fontSizeInput.value;
+    } 
+
 });
 
 lineHeightInput.addEventListener("change", e => {

@@ -67,6 +67,7 @@ window.addEventListener("DOMContentLoaded", () => {
         btns.className = "btns";
 
         let noBtn = document.createElement("button");
+        noBtn.className = "no-btn";
         let yesBtn = document.createElement("button");
         yesBtn.className = "yes-btn";
 
@@ -106,7 +107,8 @@ window.addEventListener("DOMContentLoaded", () => {
         let letter = MyLocalStorage.get_letter(id);
 
         if (letter && letter['html']) {
-            email_body.insertAdjacentHTML("beforeend", letter['html']);
+            console.log(letter['html']);
+            email_body.innerHTML = letter['html'];
             email_body.classList.add("scaled");
         }
         else {

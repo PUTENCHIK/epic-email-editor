@@ -1,4 +1,5 @@
 @import "common.css";
+@import "header.css";
 
 * {
     box-sizing: border-box;
@@ -10,7 +11,7 @@ html, body {
 
 body {
     background: url("../img/MainBackground.png") no-repeat center center fixed;
-    background-size: 100% 100%;                  /* changes */
+    background-size: 100% 100%;
     /* -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -124,11 +125,6 @@ main {
     margin-right: 10px;
 }
 
-header {
-    height: 88px;
-    background-color: #034240;
-}
-
 .workboard {
     background-color: #ffffff;
     width: 53%;
@@ -180,12 +176,17 @@ header {
     border: 3px solid #04504D;
     background-color: #ffffff;              /* changes */
     border-radius: 30px;
+    box-shadow: 2px 4px 4px 0px rgba(34, 60, 80, 0.2);
 }
 
 .headerTypeTemplateImg {
     width: 74px;
     height: 66px;
 
+}
+
+.TypeTemplateImg {
+    width: 75px;
 }
 
 .typeTemplateBlock {
@@ -227,12 +228,9 @@ header {
 }
 
 .mainTypeTemplateBlock:hover, .footerTypeTemplateBlock:hover, .headerTypeTemplateBlock:hover {
-    background-color: #E85A4F
+    background-color: #EEA39D
 }
 
-.layoutTypeTemplateBlock:hover {
-    background-color: #cc352a;
-}
 
 .changeImage {
     display: flex;
@@ -583,15 +581,11 @@ input[type="radio"] {
 
 .removeTemplateButton:hover, .dragTemplateButton:hover {
     /* box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.4) inset; */
-    background-color: #D9D9D9;
+    background-color: #E3EAEA;
 }
 
 .templatesBlockBuff {
     margin-bottom: 20px;
-}
-
-.pressed {
-    box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.4) inset;
 }
 
 .selected {
@@ -640,7 +634,7 @@ input[type="radio"] {
 } */
 
 .removeTemplateButton, .dragTemplateButton {
-    width: 181px;
+    width: 176px;
     height: 62px;
     border-radius: 27px 27px 0px 0px;
     border: none;
@@ -659,10 +653,8 @@ input[type="radio"] {
     border-bottom: none;
 }
 
-.__text {
-    font-size: 18px;
-}
 
-.letter-name {
-    font-size: 20px;
+.pressed {
+    background-color: #B9CACA;
+    box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.4) inset;
 }

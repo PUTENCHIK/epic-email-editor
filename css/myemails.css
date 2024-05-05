@@ -1,24 +1,11 @@
 @import "common.css";
+@import "header.css";
 
 body{
     margin: 0;
     background: url("../img/MainBackground.png") no-repeat center center fixed;
-    background-size: 100% 100%;                  /* changes */
-    /*background-image: url('1.jpg');*/
-    /*background-size: cover;*/
+    background-size: 100% 100%;
     display: block;
-}
-
-.header{
-    width: 100%;
-    height: 81px;
-    background-color: #034240;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    font-family: Arial;
-    color:rgb(255, 255, 255);
 }
 
 div.main{
@@ -60,6 +47,7 @@ div.main{
     border: solid orangered 2px;
     border-radius: 10px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
 .head{
@@ -139,30 +127,17 @@ img.icon {
     margin: 0 auto;
 }
 
-.button {
-    display: flex;
-    align-items: center;
-    user-select: none;
-    background-color: #ffffff;
-
-    border-radius: 10px;
-}
-
-.button:hover {
-    background-color: #D9D9D9;
-}
-
-.button-icon {
-    padding: 8px;
-}
-
 .email-body {
     width: calc(100% - 30px);
+    height: 630px;
     padding: 15px;
+    overflow: hidden;
 }
 
 .email-body.scaled {
-    transform: scale(0.4935);
+    transform-origin: left top;
+    width: 600px;
+    transform: scale(0.41);
 }
 
 .save{
@@ -172,7 +147,6 @@ img.icon {
     border: 2px darkgreen solid;
     color: white;
     width: 20%;
-
 }
 
 .close{
@@ -214,16 +188,6 @@ input.title {
 }
 
 .delWindow {
-    /*background-color: #ffffff;
-    border-radius: 9px;
-    border: 1px solid black;
-    display: flex;
-    width: 30%;
-    height: 30%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;*/
-    font-family: "Inter";
     position: fixed;
     top: 0;
     left: 0;
@@ -231,12 +195,11 @@ input.title {
     height: 30%;
     background-color: white; /* белый цвет с небольшим прозрачным оттенком */
     z-index: 9999; /* поверх всех остальных элементов */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 2); /* тень */
+    box-shadow: 0 0 10px rgba(148, 46, 9, 0.452); /* тень */
     margin-left: 35%;
     margin-top: 200px;
     border: 3px solid orangered;
     border-radius: 20px;
-    padding-top: 40px;
     text-align: center;
 
     flex-wrap: nowrap;
@@ -246,18 +209,38 @@ input.title {
 }
 
 .phrase {
-    font-family: "Inter" !important;
     margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .btns {
     display: flex;
     justify-content: space-around;
+    width: 100%;
 }
 
 .yes-btn {
-    background-color: red;
+    padding: 10px;
+    background-color: rgb(190, 51, 13);
+    border-radius: 20px;
+    border: 2px rgb(165, 48, 16) solid;
     color: white;
-    border: 1px solid rgb(158, 158, 158);
-    border-radius: 10%;
+    width: 20%;
+}
+
+.no-btn {
+    padding: 10px;
+    background-color: gray;
+    border-radius: 20px;
+    border: 2px rgb(98, 98, 98) solid;
+    color: white;
+    width: 20%;
+}
+
+.yes-btn:hover{
+    background-color: rgb(165, 48, 16);
+}
+
+.no-btn:hover{
+    background-color: rgb(98, 98, 98);
 }

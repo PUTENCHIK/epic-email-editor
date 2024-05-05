@@ -34,11 +34,11 @@ window.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < templates.length; i++) {
             for (let j = 0; j < blocks.length; j++) {
                 if (templates[i].className.includes(blocks[j])) {
+                    console.log(blocks[j], templates[i].outerHTML)
                     let cell = document.createElement("td");
                     let block = table.getElementsByClassName(blocks[j])[0];
-                    let template = templates[i];
-                    cell.innerHTML = template.outerHTML;
-
+                    // let elem = templates[i].cloneNode(true);
+                    cell.innerHTML = templates[i].outerHTML;
                     block.append(cell);
                 }
             }
@@ -50,6 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         }
         table.classList.add("from-storage");
+        console.log(table.outerHTML);
         return table.outerHTML;
     }
 
