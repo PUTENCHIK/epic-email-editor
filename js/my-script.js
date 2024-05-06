@@ -86,4 +86,9 @@ window.addEventListener("DOMContentLoaded", () => {
         modal_save.classList.add("dissable");
         // window.location.href="../html/index.html";
     });
+
+    let btn_send = document.getElementsByClassName("button-save")[0];
+    btn_send.addEventListener("click", () => {
+        // do
+    })
 });

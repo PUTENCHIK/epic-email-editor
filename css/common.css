@@ -51,3 +51,68 @@ body, input, button, div {
 .primary-button:hover {
     background-color: #f15b3b;
 }
+
+input.form-text {
+    height: 40px;
+    padding-left: 15px;
+
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #dcdcdc;
+    outline: 0;
+    border: 0;
+}
+
+input.form-text:hover {
+    background-color: #bfbfbf;
+}
+
+input.form-text:focus {
+    outline: 1px solid #808080;
+}
+
+.fixed-window {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    margin-top: 400px;
+    padding: 10px 20px 20px 20px;
+    z-index: 99;
+
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(148, 46, 9, 0.452);
+    border: 3px solid orangered;
+    border-radius: 20px;
+}
+
+.fixed-window > * {
+    width: 100%;
+}
+.fixed-window > :not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.fixed-window > h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.buttons-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttons-group > .button:first-child {
+    margin-left: auto;
+}
+
+.buttons-group > .button:not(:last-child) {
+    margin-right: 20px;
+}
+
+.buttons-group > .button:last-child {
+    margin-right: auto;
+}
