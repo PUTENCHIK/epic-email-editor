@@ -70,7 +70,7 @@ div.main{
     justify-content: center;
 }
 
-img{
+img {
     height: 90%;
     width: 80%;
 }
@@ -127,11 +127,26 @@ img.icon {
     margin: 0 auto;
 }
 
+.email-name {
+    display: flex;
+    align-items: center;
+    width: 145px;
+    height: 20px;
+    flex: 1;
+}
+
+.email-name > span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .email-body {
     width: calc(100% - 30px);
     height: 630px;
     padding: 15px;
     overflow: hidden;
+    user-select: none;
 }
 
 .email-body.scaled {

@@ -39,7 +39,9 @@ window.addEventListener("DOMContentLoaded", () => {
         email_body.className = "email-body";
         let email_name = document.createElement("div");
         email_name.className = "email-name";
-        email_name.textContent = title;
+        let name_text = document.createElement("span");
+        name_text.textContent = title;
+        name_text.title = title;
         let icons_box = document.createElement("div");
         icons_box.className = "icons";
 
@@ -119,6 +121,7 @@ window.addEventListener("DOMContentLoaded", () => {
         delete_box.append(delete_icon);
         icons_box.append(redact_box);
         icons_box.append(delete_box);
+        email_name.append(name_text);
         email_head.append(email_name);
         email_head.append(icons_box);
         email_box.append(email_head);
