@@ -658,3 +658,62 @@ input[type="radio"] {
     background-color: #B9CACA;
     box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.4) inset;
 }
+
+.modal-save {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 30%;
+    background-color: white; /* белый цвет с небольшим прозрачным оттенком */
+    z-index: 9999; /* поверх всех остальных элементов */
+    box-shadow: 0 0 10px rgba(148, 46, 9, 0.452); /* тень */
+    margin-left: 35%;
+    margin-top: 200px;
+    border: 3px solid orangered;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 16px;
+
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.phrase {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.save-yes-btn {
+    padding: 10px;
+    background-color: green;
+    border-radius: 20px;
+    border: 2px darkgreen solid;
+    color: white;
+    width: 20%;
+}
+
+.save-no-btn {
+    padding: 10px;
+    background-color: gray;
+    border-radius: 20px;
+    border: 2px rgb(98, 98, 98) solid;
+    color: white;
+    width: 20%;
+}
+
+.save-yes-btn:hover{
+    background-color: darkgreen;
+}
+
+.save-no-btn:hover{
+    background-color: rgb(98, 98, 98);
+}

@@ -34,10 +34,8 @@ window.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < templates.length; i++) {
             for (let j = 0; j < blocks.length; j++) {
                 if (templates[i].className.includes(blocks[j])) {
-                    console.log(blocks[j], templates[i].outerHTML)
                     let cell = document.createElement("td");
                     let block = table.getElementsByClassName(blocks[j])[0];
-                    // let elem = templates[i].cloneNode(true);
                     cell.innerHTML = templates[i].outerHTML;
                     block.append(cell);
                 }
@@ -50,7 +48,6 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         }
         table.classList.add("from-storage");
-        console.log(table.outerHTML);
         return table.outerHTML;
     }
 
@@ -71,10 +68,22 @@ window.addEventListener("DOMContentLoaded", () => {
     letter_name.textContent = MyLocalStorage.get_current_letter()['title'];
 
     let btn_save = document.getElementsByClassName("button-save")[0];
+    let modal_save = document.getElementsByClassName("modal-save")[0];
+    let save_yes_btn = document.getElementById("save-yes-btn");
+    let save_no_btn = document.getElementById("save-no-btn");
+
     btn_save.addEventListener("click", () => {
-        let letter_html = readLetterContent();
-        MyLocalStorage.set_html_current_letter(letter_html);
-        // window.location.href="../html/index.html";
+        modal_save.classList.remove("dissable");
     });
 
+    save_no_btn.addEventListener("click", () => {
+        modal_save.classList.add("dissable");
+    });
+
+    save_yes_btn.addEventListener("click", () => {
+        let letter_html = readLetterContent();
+        MyLocalStorage.set_html_current_letter(letter_html);
+        modal_save.classList.add("dissable");
+        // window.location.href="../html/index.html";
+    });
 });
