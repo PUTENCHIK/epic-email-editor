@@ -1,5 +1,10 @@
 window.addEventListener("DOMContentLoaded", () => {
 
+    function cancel_listener() {
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+    }
+
     function createMainTable() {
         let table = document.createElement("table");
         table.id = "mainTable";
@@ -87,8 +92,26 @@ window.addEventListener("DOMContentLoaded", () => {
         // window.location.href="../html/index.html";
     });
 
-    let btn_send = document.getElementsByClassName("button-save")[0];
+    let send_window = document.getElementsByClassName("window-send-email")[0];
+    let btn_send = document.getElementsByClassName("button-send")[0];
     btn_send.addEventListener("click", () => {
-        // do
-    })
+        send_window.classList.remove("dissable");
+
+        btn_save.addEventListener("click", cancel_listener, true);
+        btn_myemails.addEventListener("click", cancel_listener, true);
+    });
+
+    let btn_cancel_send = document.getElementsByClassName("button-cancel-send")[0];
+    let btn_true_send = document.getElementsByClassName("button-true-send")[0];
+
+    btn_cancel_send.addEventListener("click", () => {
+        send_window.classList.add("dissable");
+
+        btn_save.removeEventListener("click", cancel_listener, true);
+        btn_myemails.removeEventListener("click", cancel_listener, true);
+    });
+
+    btn_true_send.addEventListener("click", () => {
+        console.log("true send");
+    });
 });
