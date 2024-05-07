@@ -14,6 +14,10 @@ body, input, button, div {
 .hidden {
     visibility: hidden;
     display: none;
+    width: 0;
+    height: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .button {
@@ -29,11 +33,11 @@ body, input, button, div {
     background-color: #D9D9D9;
 }
 
-.button-icon {
+.button.button-icon {
     padding: 8px;
 }
 
-.button-text {
+.button.button-text {
     padding: 10px 20px;
 }
 
@@ -41,15 +45,25 @@ body, input, button, div {
     font-size: 18px;
 }
 
-.primary-button {
+.button.primary-button {
     background-color: #F14925;
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
 }
 
-.primary-button:hover {
+.button.primary-button:hover {
     background-color: #f15b3b;
+}
+
+.button.agree-button {
+    background-color: #008000;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.button.agree-button:hover {
+    background-color: #006d00;
 }
 
 input.form-text {
@@ -69,4 +83,18 @@ input.form-text:hover {
 
 input.form-text:focus {
     outline: 1px solid #808080;
+}
+
+.error-block {
+    display: flex;
+    align-items: center;
+    padding: 5px 0 5px 15px;
+
+    background-color: #ff8080;
+    border-radius: 10px;
+}
+
+.error-block > .__text {
+    font-size: 14px;
+    color: #d90000;
 }

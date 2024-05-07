@@ -1,3 +1,5 @@
+@import "common.css";
+
 .window-container {
     position: fixed;
     top: 0;
@@ -23,7 +25,7 @@
 
     z-index: 99;
     margin-top: 100px;
-    padding: 10px 20px 20px 20px;
+    padding: 30px 20px 20px 20px;
 
     font-size: 16px;
     background-color: white;
@@ -39,9 +41,9 @@
     margin-bottom: 20px;
 }
 
-.fixed-window > h2 {
+.fixed-window > h2.window-title {
     font-size: 18px;
-    margin: 0;
+    margin-top: 0;
     font-weight: bold;
 }
 
@@ -62,21 +64,23 @@
     margin-right: auto;
 }
 
-.window-send-email {
-    width: 500px;
-    left: calc(50% - 250px);
-}
-
-.window-send-email > label {
+.fixed-window > label {
     display: flex;
     flex-wrap: wrap;
 }
 
-.window-send-email > label > span {
+.fixed-window > label > * {
     width: 100%;
+}
+
+.fixed-window > label > span {
     padding-bottom: 10px;
 }
 
-.window-send-email input.form-text {
-    width: 100%;
+.fixed-window p {
+    margin-top: 0;
+}
+
+.fixed-window .error-block:not(.hidden) {
+    margin-top: 15px;
 }
