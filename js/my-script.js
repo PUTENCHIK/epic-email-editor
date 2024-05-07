@@ -1,59 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
 
-    function cancel_listener() {
-        event.stopPropagation();
-        event.stopImmediatePropagation();
-    }
-
-    function createMainTable() {
-        let table = document.createElement("table");
-        table.id = "mainTable";
-        table.className = "mainTable table-600";
-        table.cellPadding = "0";
-        table.cellSpacing = "0";
-        table.style.width = "600";
-        table.align = "center";
-        let tbody = document.createElement("tbody");
-        let tr_header = document.createElement("tr");
-        tr_header.className = "header";
-        tr_header.id = "header";
-        let tr_main = document.createElement("tr");
-        tr_main.className = "main";
-        tr_main.id = "main";
-        let tr_footer = document.createElement("tr");
-        tr_footer.className = "footer";
-        tr_footer.id = "footer";
-
-        tbody.append(tr_header);
-        tbody.append(tr_main);
-        tbody.append(tr_footer);
-        table.append(tbody);
-
-        return table;
-    }
-
-    function readLetterContent() {
-        let templates = document.getElementsByClassName("mainTable")[0].getElementsByClassName("template");
-        let table = createMainTable();
-        let blocks = ["header", "main", "footer"];
-        for (let i = 0; i < templates.length; i++) {
-            for (let j = 0; j < blocks.length; j++) {
-                if (templates[i].className.includes(blocks[j])) {
-                    let cell = document.createElement("td");
-                    let block = table.getElementsByClassName(blocks[j])[0];
-                    cell.innerHTML = templates[i].outerHTML;
-                    block.append(cell);
-                }
-            }
-        }
-        for (let j = 0; j < blocks.length; j++) {
-            let block = table.getElementsByClassName(blocks[j])[0]
-            if (block.children.length === 0) {
-                block.remove();
-            }
-        }
-        table.classList.add("from-storage");
-        return table.outerHTML;
+    function getMain() {
+        return document.getElementsByTagName("main")[0];
     }
 
     try {
@@ -73,48 +21,14 @@ window.addEventListener("DOMContentLoaded", () => {
     letter_name.textContent = MyLocalStorage.get_current_letter()['title'];
 
     let btn_save = document.getElementsByClassName("button-save")[0];
-    let modal_save = document.getElementsByClassName("modal-save")[0];
-    let save_yes_btn = document.getElementById("save-yes-btn");
-    let save_no_btn = document.getElementById("save-no-btn");
-
     btn_save.addEventListener("click", () => {
-        modal_save.classList.remove("dissable");
+        let save_window = new SaveEmailWindow().render();
+        getMain().append(save_window);
     });
 
-    save_no_btn.addEventListener("click", () => {
-        modal_save.classList.add("dissable");
-    });
-
-    save_yes_btn.addEventListener("click", () => {
-        let letter_html = readLetterContent();
-        MyLocalStorage.set_html_current_letter(letter_html);
-        modal_save.classList.add("dissable");
-        // window.location.href="../html/index.html";
-    });
-
-    let send_window = document.getElementsByClassName("window-send-email")[0];
     let btn_send = document.getElementsByClassName("button-send")[0];
     btn_send.addEventListener("click", () => {
-        send_window.classList.remove("dissable");
-
-        btn_save.addEventListener("click", cancel_listener, true);
-        btn_myemails.addEventListener("click", cancel_listener, true);
+        let send_window = new SendEmailWindow().render();
+        getMain().append(send_window);
     });
-
-    let btn_cancel_send = document.getElementsByClassName("button-cancel-send")[0];
-    let btn_true_send = document.getElementsByClassName("button-true-send")[0];
-
-    btn_cancel_send.addEventListener("click", () => {
-        send_window.classList.add("dissable");
-
-        btn_save.removeEventListener("click", cancel_listener, true);
-        btn_myemails.removeEventListener("click", cancel_listener, true);
-    });
-
-    btn_true_send.addEventListener("click", () => {
-        console.log("true send");
-    });
-
-    let new_window = new SendEmailWindow().render();
-    document.getElementsByTagName("main")[0].append(new_window);
 });

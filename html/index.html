@@ -6,7 +6,6 @@
 	<title>EmailWizard</title>
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/letter-settings.css">
-	<link rel="stylesheet" href="../css/windows.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +34,7 @@
 					<img src="../img/save-icon.png" alt="save"/>
 				</div>
 				<div class="modal-save dissable">
-					<p class = "phrase">Вы действительно хотите сохранить это письмо?</p>
+					<p class="phrase">Вы действительно хотите сохранить это письмо?</p>
 					<div class="btns">
 						<button id="save-no-btn" class="save-no-btn">Нет</button>
 						<button id="save-yes-btn" class="save-yes-btn">Да</button>
@@ -48,25 +47,6 @@
 			<div class="header-elements-group">
 				<div class="button button-text primary-button button-send">
 					<div class="__text">Отправить</div>
-				</div>
-				<div class="fixed-window window-send-email dissable">
-					<h2>Отправка письма</h2>
-					<label>
-						<span>Введите почту получателя:</span>
-						<input class="form-text" type="email" name="receiver" placeholder="example@outlook.ru">
-					</label>
-					<label>
-						<span>Введите тему письма:</span>
-						<input class="form-text" type="text" name="theme" placeholder="Приглашение на конференцию">
-					</label>
-					<div class="buttons-group">
-						<div class="button button-text button-cancel-send">
-							<div class="__text">Отмена</div>
-						</div>
-						<div class="button button-text primary-button button-true-send">
-							<div class="__text">Отправить</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -822,6 +802,8 @@
 	<script src="../js/models/MyLocalStorage.js"></script>
 	<script src="../js/models/FixedWindow.js"></script>
 	<script src="../js/models/SendEmailWindow.js"></script>
+	<script src="../js/models/SaveEmailWindow.js"></script>
+	<script src="../js/models/RedactorReader.js"></script>
 	<script src="../js/redirect.js"></script>
 </body>
 
