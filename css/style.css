@@ -717,22 +717,3 @@ input[type="radio"] {
 .save-no-btn:hover{
     background-color: rgb(98, 98, 98);
 }
-
-.window-send-email {
-    width: 500px;
-    left: calc(50% - 250px);
-}
-
-.window-send-email > label {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.window-send-email > label > span {
-    width: 100%;
-    padding-bottom: 10px;
-}
-
-.window-send-email input.form-text {
-    width: 100%;
-}

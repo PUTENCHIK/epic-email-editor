@@ -114,4 +114,7 @@ window.addEventListener("DOMContentLoaded", () => {
     btn_true_send.addEventListener("click", () => {
         console.log("true send");
     });
+
+    let new_window = new SendEmailWindow().render();
+    document.getElementsByTagName("main")[0].append(new_window);
 });

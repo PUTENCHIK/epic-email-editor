@@ -1,0 +1,82 @@
+.window-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 98;
+}
+
+.fixed-window {
+    width: 400px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    z-index: 99;
+    margin-top: 100px;
+    padding: 10px 20px 20px 20px;
+
+    font-size: 16px;
+    background-color: white;
+    /*box-shadow: 0 0 10px rgba(148, 46, 9, 0.452);*/
+    border: 3px solid orangered;
+    border-radius: 20px;
+}
+
+.fixed-window > * {
+    width: 100%;
+}
+.fixed-window > :not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.fixed-window > h2 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.buttons-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttons-group > .button:first-child {
+    margin-left: auto;
+}
+
+.buttons-group > .button:not(:last-child) {
+    margin-right: 20px;
+}
+
+.buttons-group > .button:last-child {
+    margin-right: auto;
+}
+
+.window-send-email {
+    width: 500px;
+    left: calc(50% - 250px);
+}
+
+.window-send-email > label {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.window-send-email > label > span {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.window-send-email input.form-text {
+    width: 100%;
+}
