@@ -40,13 +40,18 @@ class SendEmailWindow extends FixedWindow {
             }
 
             let theme = this.getInputValue("theme");
-            console.log("theme:", theme);
             if (! theme) {
                 this.showErrorBlock("theme");
                 this.setErrorBlockText("theme", "Вы не ввели тему письма");
             } else {
                 this.hideErrorBlock("theme");
             }
+
+            if (theme && receiver) {
+                EmailSender.sendEmail(theme, receiver);
+            }
+
+            this.closeWindow();
         });
 
         this.buttons_group.append(this.button_cancel);

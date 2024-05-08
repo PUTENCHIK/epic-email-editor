@@ -6,6 +6,17 @@ class MyLocalStorage {
         return localStorage[this.name] !== undefined;
     }
 
+    static get_letter_template() {
+        let storage = this.get();
+        return storage['letter_template'];
+    }
+
+    static set_letter_template(html) {
+        let storage = this.get();
+        storage['letter_template'] = html;
+        this.set(storage);
+    }
+
     static create() {
         if (this.check_exists()) {
             throw new Error(`Local storage with name '${this.name}' is already exists.`);
@@ -13,6 +24,7 @@ class MyLocalStorage {
         let object = {
             "current_letter": null,
             "letters": [],
+            "letter_template": null,
         }
         localStorage[this.name] = JSON.stringify(object);
     }
@@ -56,8 +68,8 @@ class MyLocalStorage {
     }
 
     static set_html_current_letter(html) {
-        let current_id = this.get()['current_letter'];
         let storage = this.get();
+        let current_id = storage['current_letter'];
         let letters = this.get_letters();
 
         for (let i = 0; i < letters.length; i++) {
