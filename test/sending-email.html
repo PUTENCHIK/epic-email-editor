@@ -24,11 +24,11 @@ var mailHtm =`
         line-height: 100%;
         color: #022027;
       }
-      
+
       [style*="Open Sans"] {
         font-family: 'Open Sans', arial, sans-serif !important;
       }
-      
+
       img {
         outline: none;
         text-decoration: none;
@@ -39,17 +39,17 @@ var mailHtm =`
         padding: 0;
         display: block;
       }
-      
+
       table td {
         border-collapse: collapse;
       }
-      
+
       table {
         border-collapse: collapse;
         mso-table-lspace: 20pt;
         mso-table-rspace: 20pt;
       }
-      
+
       .menu a {
         font-size: 18px;
         font-weight: 400;
@@ -76,11 +76,11 @@ var mailHtm =`
         line-height: 1.7;
         text-decoration: none;
       }
-      
+
       .menu td {
         padding-left: 30px;
       }
-      
+
       .things a {
         font-size: 18px;
         font-weight: 400;
@@ -223,7 +223,7 @@ var mailHtm =`
                     <tr>
                       <td align="center">
                         <table class="header-td S" width ="750" cellpading="0" cellspacing="0" align="center">
-                            
+
                             <tr valign="top">
                                 <td>
                                     <table cellpading="0" cellspacing="0" width="750">
@@ -233,7 +233,7 @@ var mailHtm =`
                                                 <tr>
                                                     <td align="left" bgcolor="darkgray"><img src="https://cdn-icons-png.flaticon.com/512/3081/3081797.png" height="35"/></td>
                                                     <td align="left" style="color: white; font-size: 16px;">@2024 Шелби </td>
-    
+
                                                 </tr>
                                             </table>
                                             </td>
@@ -242,7 +242,7 @@ var mailHtm =`
                                                     <tr>
                                                         <td align="center"><img src="https://w7.pngwing.com/pngs/110/123/png-transparent-iphone-ipad-android-google-play-now-button-electronics-text-logo.png" height="35"/></td>
                                                         <td align="center"><img src="https://i-invdn-com.investing.com/landingPages/mobile_2018/ru/ru-badge-ios.png" height="55"/></td>
-        
+
                                                     </tr>
                                                 </table>
                                                 </td>
@@ -250,7 +250,7 @@ var mailHtm =`
                                                     <table cellpading="0" cellspacing="0" style="border-spacing: 20px;border-collapse: separate;">
                                                         <tr>
                                                             <td align="center"><img src="https://cdn-icons-png.flaticon.com/128/8728/8728153.png" height="35"/></td>
-            
+
                                                         </tr>
                                                     </table>
                                                     </td>
@@ -265,7 +265,7 @@ var mailHtm =`
                                             </td>
                                         </tr>
                                     </table>
-                                </td> 
+                                </td>
                         </tr>
                   </table>
                   </td>
@@ -283,12 +283,14 @@ var mailHtm =`
   </html>`;
 var emailTo = "shornikovdanniil1111@gmail.com";
 var emailsubject = "Tema";
+
 var emlCont = 'To: '+emailTo+'\n';
 emlCont += 'Subject: '+emailsubject+'\n';
 emlCont += 'X-Unsent: 1'+'\n';
 emlCont += 'Content-Type: text/html; charset=utf-8'+'\n';
 emlCont += ''+'\n';
 emlCont += mailHtm;
+
 console.log(emlCont);
 var textFile = null;
 var data = new Blob([emlCont], {type: 'text/plain'});
@@ -297,14 +299,13 @@ if (textFile !== null) {
 }
 textFile = window.URL.createObjectURL(data);
 var a = document.createElement('a');
-var linkText = document.createTextNode("fileLink");
-a.appendChild(linkText);
+a.textContent = "fileLink";
 a.href = textFile;
 a.id = 'fileLink';
 a.download = emailsubject+".eml";
-a.style.visibility = "hidden";
-document.body.appendChild(a);
-document.getElementById('fileLink').click();
+a.click();
+a.remove();
 }
 </script>
-</body></html>
+</body>
+</html>
