@@ -1,11 +1,18 @@
-window.addEventListener("DOMContentLoaded", () => {
-    let window = new SendEmailWindow().render();
-    document.getElementsByClassName("main")[0].append(window);
+function getPromiseFromEvent(item, event) {
+    return new Promise((resolve) => {
+        const listener = () => {
+            item.removeEventListener(event, listener);
+            resolve();
+        }
+        item.addEventListener(event, listener);
+    });
+}
 
-    let ps = document.getElementsByTagName("p");
-    for (let i = 0; i < ps.length; i++) {
-        ps[i].addEventListener("click", () => {
-            console.log(ps[i]);
-        });
-    }
-});
+async function waitForButtonClick() {
+    const div = document.querySelector("div");
+    const button = document.querySelector("button");
+    div.innerText = "Waiting for you to press the button";
+    await getPromiseFromEvent(button, "click");
+    div.innerText = "The button was pressed!";
+}
+waitForButtonClick();
