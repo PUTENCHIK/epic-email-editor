@@ -31,10 +31,15 @@ class SendEmailWindow extends FixedWindow {
 
         this.button_send = SendEmailWindow.createButton("Отправить", "button-true-send", true);
         this.button_send.addEventListener("click", () => {
+            let emailIsValid = true;
             let receiver = this.getInputValue("receiver");
             if (! receiver) {
                 this.showErrorBlock("receiver");
                 this.setErrorBlockText("receiver", "Вы не ввели почту получателя письма");
+            } else if (! /^[a-z\d\-]+@(gmail|mail|outlook|yandex)\.(ru|com)$/iu.test(receiver)) {
+                this.showErrorBlock("receiver");
+                this.setErrorBlockText("receiver", "Введённое значение не является адресом почты");
+                emailIsValid = false;
             } else {
                 this.hideErrorBlock("receiver");
             }
@@ -47,11 +52,10 @@ class SendEmailWindow extends FixedWindow {
                 this.hideErrorBlock("theme");
             }
 
-            if (theme && receiver) {
+            if (emailIsValid && theme && receiver) {
                 EmailSender.sendEmail(theme, receiver);
+                this.closeWindow();
             }
-
-            this.closeWindow();
         });
 
         this.buttons_group.append(this.button_cancel);

@@ -1,7 +1,3 @@
-// window.addEventListener("DOMContentLoaded", () => {
-//
-// });
-
 console.log("Creating local storage");
 try {
     MyLocalStorage.create();
@@ -14,15 +10,11 @@ if (! MyLocalStorage.get_letter_template()) {
     let tag_html = document.getElementsByTagName("html");
     if (tag_html.length !== 0) {
         let html = tag_html[0];
-        // let scripts = html.getElementsByTagName("script");
-        // for (let i = 0; i < scripts.length; i++) {
-        //     scripts[i].remove();
-        // }
+        html.setAttribute("xmlns", "http://www.w3.org/1999/xhtml");
         console.log("Loading template");
-        MyLocalStorage.set_letter_template(html.outerHTML);
+        MyLocalStorage.set_letter_template(`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">` + html.outerHTML);
     } else {
         MyLocalStorage.set_letter_template(null);
     }
 }
-// window.close();
 window.location.href = "myemails.html";
