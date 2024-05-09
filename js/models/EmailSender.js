@@ -1,12 +1,12 @@
 class EmailSender {
     static uploadLetterTemplate() {
-        const page = window.open("letter-template.html");
-        page.close();
+        if (! MyLocalStorage.get_letter_template()) {
+            // window.open("letter-template.html");
+            window.location.href = "letter-template.html";
+        }
     }
 
     static sendEmail(theme, email) {
-        EmailSender.uploadLetterTemplate()
-
         let template = document.createElement("html");
         let templateHTML = MyLocalStorage.get_letter_template();
         template.innerHTML = templateHTML.trim();

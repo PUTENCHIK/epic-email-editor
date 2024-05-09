@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     } catch {
         //
     }
+    EmailSender.uploadLetterTemplate();
     MyLocalStorage.set_current_letter(null);
     EmailBlocksCreator.renderLetters();
 
