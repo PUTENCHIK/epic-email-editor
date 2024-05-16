@@ -16,7 +16,10 @@ class EmailSender {
             scripts[i].remove();
         }
 
-        let letterHTML = MyLocalStorage.get_current_letter()['html'];
+        let letterHTML = RedactorReader.readLetterContent(true);
+        // MyLocalStorage.set_html_current_letter(letterHTML);
+        // let letterHTML = MyLocalStorage.get_current_letter()['html'];
+
         template.getElementsByClassName("mainTableContainer")[0].insertAdjacentHTML("afterbegin", letterHTML);
 
         let emailContent = `To: ${email}\n`;
