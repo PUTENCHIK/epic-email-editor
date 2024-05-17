@@ -73,7 +73,9 @@ function rgbToHex(rgbString) {
 function stopEditText() {
     editingText = false;
 
-    if (!mainInputText.value) {
+    let a = mainInputText.value;
+
+    if (!mainInputText.textContent) {
         currentObject.textContent = "...";
     }
     else {
@@ -119,7 +121,8 @@ letter.addEventListener('click', e => {
         currentObject = object;
 
         // Настраиваем input
-        mainInputText.value = object.textContent;
+        mainInputText.textContent = currentObject.textContent;
+        mainInputText.value = currentObject.textContent;
         mainInputText.classList = "";
 
         currentObject.classList.forEach(element => {
@@ -127,7 +130,14 @@ letter.addEventListener('click', e => {
         });
 
         mainInputText.classList.add("mainInputText");
-        mainInputText.setAttribute("style", "color:black");
+
+        let a = currentObject.offsetWidth;
+        let curWidth, curHeight;
+
+        curWidth = String(currentObject.offsetWidth + 10) + 'px';
+        curHeight = String(currentObject.offsetHeight + 10) + 'px';
+
+        mainInputText.setAttribute("style","display:block; width:" + curWidth + "; height: " + curHeight +  "; color:black");
         mainInputText.style.fontSize = currentObject.style.fontSize;
 
         if (object.parentElement.tagName === "A") {
@@ -339,8 +349,17 @@ fontSizeInput.addEventListener("change", e => {
     else {
         currentObject.style.fontSize = fontSizeInput.value;
         mainInputText.style.fontSize = fontSizeInput.value;
-    } 
 
+        currentObject.classList.remove("dissable");
+
+        let curWidth = String(currentObject.offsetWidth + 20) + 'px';
+        let curHeight = String(currentObject.offsetHeight + 10) + 'px';
+
+        currentObject.classList.add("dissable");
+
+        mainInputText.style.width = curWidth;
+        mainInputText.style.height = curHeight;
+    }
 });
 
 lineHeightInput.addEventListener("change", e => {

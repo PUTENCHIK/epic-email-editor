@@ -17,7 +17,7 @@
 </head>
 
 <body style="margin: 0; padding: 0;">
-	<input id="mainInputText" autofocus type="text" class="mainInputText dissable">
+	<textarea id="mainInputText" class="mainInputText dissable"> </textarea>
 	<div class="page-header">
 		<div class="letter-name">
 			Epic Email Editor
@@ -47,7 +47,7 @@
 
 		<div class="workboard">
 			<div id="letter" class="letter">
-				<div style="font-size:0px;font-color:#ffffff;opacity:0;visibility:hidden;width:0;height:0;display:none;">Тестовое письмо</div>
+				<div style="font-size:0px;font-color:#ffffff;opacity:0;visibility:hidden;width:0;height:0;display:none;">Epic Email Editor Letter</div>
 				<table cellpadding="0" cellspacing="0" width="100%" bgcolor="#FFFFFF">
 					<tr>
 						<td>
@@ -64,13 +64,13 @@
 
 		<div id="settings" class="settings">
 			<div class="updatetitleBlock">
-				<span class="updateTitle">Дизайн</span>
+				<span class="updateTitle">Design</span>
 			</div>
 			<div id="updateTextBlock" class="updateTextBlock dissable">
 				<div class="updateTextFonts">
-					<h5 class="updateTextFontsTitle">Тест</h5>
+					<h5 class="updateTextFontsTitle">Text</h5>
 					<div class="fontFamilyBlock">
-						<span class="fontFamilyTitle">Шрифт:</span>
+						<span class="fontFamilyTitle">Font:</span>
 						<select class="fontFamilyInput" name="fontFamilyInput" id="fontFamilyInput">
 							<option value='"Times New Roman", Times, serif'>'Times New Roman', Times, serif</option>
 							<option value="Georgia, serif">Georgia, serif</option>
@@ -84,38 +84,38 @@
 						</select>
 					</div>
 					<div class="fontWeightBlock">
-						<span class="fontWeightTitle">Вид шрифта</span>
+						<span class="fontWeightTitle">Selection^</span>
 						<div class="fontWeights">
 							<div class="fontWeightBoldBlock">
-								<span class="fontWeightBoldSpan"><b>Ж</b></span>
+								<span class="fontWeightBoldSpan"><b>B</b></span>
 								<input type="checkbox" name="fontWeightBold" id="fontWeightBold">
 							</div>
 							<div class="fontWeightItalicBlock">
-								<span class="fontWeightItalicSpan">К</span>
+								<span class="fontWeightItalicSpan">I</span>
 								<input type="checkbox" name="fontWeightItalic" id="fontWeightItalic">
 							</div>
 							<div class="fontWeightLinedBlock">
-								<span class="fontWeightLinedSpan">Ч</span>
+								<span class="fontWeightLinedSpan">U</span>
 								<input type="checkbox" name="fontWeightLined" id="fontWeightLined">
 							</div>
 						</div>
 						<!-- <input class="fontWeightInput" type="text" name="fontWeightInput" id="fontWeightInput"> -->
 					</div>
 					<div class="fontSizeBlock">
-						<span class="fontSizeTitle">Размер шрифта</span>
+						<span class="fontSizeTitle">Font size</span>
 						<input class="fontSizeInput" type="text" name="fontSizeInput" id="fontSizeInput">
 					</div>
 					<div class="lineHeightBlock">
-						<span class="lineHeightTitle">Высота строки:</span>
+						<span class="lineHeightTitle">Line height:</span>
 						<input class="lineHeightInput" type="text" name="lineHeightInput" id="lineHeightInput">
 					</div>
 					<div class="letterSpacingBlock">
-						<span class="letterSpacingTitle">Строчное расстояние:</span>
+						<span class="letterSpacingTitle">Line spacing:</span>
 						<input class="letterSpacingInput" type="text" name="letterSpacingInput" id="letterSpacingInput">
 					</div>
 				</div>
 				<div class="updateTextColorBlock">
-					<h5 class="updateTextColorTitle">Заливка</h5>
+					<h5 class="updateTextColorTitle">Color</h5>
 					<div class="updateFillBlock">
 						<input id="updateTextColor" class="updateTextColor" type="color">
 						<input id="updateTextColorTag" class="updateTextColorTag" type="text" value="#ff0000">
@@ -123,7 +123,7 @@
 					</div>
 				</div>
 				<div class="updatetextAlignmentBlock">
-					<h5 class="updatetextAlignmentTitle">Выравнивание</h5>
+					<h5 class="updatetextAlignmentTitle">Align</h5>
 					<div class="alignments">
 						<input type="radio" name="textAlignment" id="textAlignmentLeft" value="left">
 						<label for="textAlignmentLeft" class="textAlignmentLeftBlock">
@@ -143,7 +143,7 @@
 			   </div>
 			</div>
 			<div id="updateBackgroundColorBlock" class="updateBackgroundColorBlock dissable">
-				<h5 class="updateTextColorTitle">Заливка</h5>
+				<h5 class="updateTextColorTitle">Color</h5>
 				<div class="updateFillBlock">
 					<input id="updateBackgroundColor" class="updateBackgroundColor" type="color">
 					<input id="updateBackgroundColorTag" class="updateBackgroundColorTag" type="text" value="#ff0000">
@@ -156,32 +156,32 @@
 							<img class="displayImage" id="displayImage" alt="Bad URL">
 						</div>
 						<div class="putImageBlock">
-							<span class="displayImageText">Поменять фото:</span>
+							<span class="displayImageText">Change image</span>
 							<input id="path" class="putImage" type="text">
 						</div>
 					</div>
 					<div class="changeImageOpacity">
-						<h5 class="updateImageColorTitle">Прозрачность</h5>
+						<h5 class="updateImageColorTitle">Transparency</h5>
 						<div class="settingsImageOpacityBlock">
 						    <img class="displayImageOpacity" id="displayImageOpacity" alt="">
 							<input id="updateImageOpacityInput" class="updateImageOpacityInput" type="text">
 						</div>
 					</div>
 					<div class="updateImageAlignmentBlock">
-						<h5 class="updateImageAlignmentTitle">Выравнивание</h5>
-						<label for="updateImagePaddingLeftInput" class="updateImagePaddingLeftLabel">Отступ слева:</label>
+						<h5 class="updateImageAlignmentTitle">Align</h5>
+						<label for="updateImagePaddingLeftInput" class="updateImagePaddingLeftLabel">Margin left:</label>
 						<input id="updateImagePaddingLeftInput" class="updateImageWidthInput" type="text">
 						<br>
-						<label for="updateImagePaddingRightInput" class="updateImagePaddingRightLabel">Отступ справа:</label>
+						<label for="updateImagePaddingRightInput" class="updateImagePaddingRightLabel">Margin right:</label>
 						<input id="updateImagePaddingRightInput" class="updateImageHeightInput" type="text">
 				   </div>
 				   <div class="updateImageSize">
 					<h5 class="updateImageSizeTitle">Image size</h5>
 					<div class="settingsImageSizeBlock">
-						<label for="updateImageWidthInput" class="updateImagePaddingLeftLabel">Ширина:</label>
+						<label for="updateImageWidthInput" class="updateImagePaddingLeftLabel">Width:</label>
 						<input id="updateImageWidthInput" class="updateImageWidthInput" type="text">
 						<br>
-						<label for="updateImageHeightInput" class="updateImagePaddingLeftLabel">Высота:</label>
+						<label for="updateImageHeightInput" class="updateImagePaddingLeftLabel">Height:</label>
 						<input id="updateImageHeightInput" class="updateImageHeightInput" type="text">
 					</div>
 				</div>
@@ -194,10 +194,10 @@
 	<script type="text/babel">
 		function Header1() {
 			return (
-				<table className="template header1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+				<table style={{maxWidth: '600px'}} className="template header1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
 					<tr>
 						<td align={"center"} height={"75px"} bgcolor={"#333333"}>
-							<img align={"center"} src={"../img/logoFashion.png"} style={{width: "160px"}}/>
+							<img align={"center"} src={"https://i.pinimg.com/originals/d1/2b/cf/d12bcf726d8683c17229522b730ea061.png"} style={{width: "160px"}}/>
 						</td>
 					</tr>
 					<tr>
@@ -234,19 +234,19 @@
 										<td>
 											<table align="left" class="menu leftMenu" cellpadding="0" cellspacing="0">
 												<tr>
-													<td><a href="#">Menu</a></td>
-													<td><a href="#">Reservation</a></td>
+													<td><a href="#"><span>Menu</span></a></td>
+													<td><a href="#"><span>Reservation</span></a></td>
 												</tr>
 											</table>
 										</td>
 										<td align="center">
-											<img style={{width: "150px"}} src="../img/logo.png" alt="logo"/>
+											<img style={{width: "150px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_2ec97436767c2a3affe1ca04469ab056/images/211502462728809.png" alt="logo"/>
 										</td>
 										<td>
 											<table align="center" class="menu rightMenu" cellpadding="0" cellspacing="0">
 												<tr>
-													<td><a href="#">Events</a></td>
-													<td><a href="#">Contact</a></td>
+													<td><a href="#"><span>Events</span></a></td>
+													<td><a href="#"><span>Contact</span></a></td>
 												</tr>
 											</table>
 										</td>
@@ -258,46 +258,476 @@
 			)
 		}
 
-		function Main1() {
+		function Header3() {
 			return (
-					<table className="template main1" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-						<tr>
-							<td class="banner-td">
-								<a href="#">
-									<img style={{width: "600px"}} src="../img/welcome.jpg" alt="banner"/>
-								</a>
-							</td>
-						</tr>
-					</table>
+				<table className="table-600 template header3" cellpading="0" cellspacing="0" width="600" align="center">
+					<tr>
+						<td align="left">
+							<img src="https://1000logos.net/wp-content/uploads/2019/03/Dota-2-Logo.png" width="100" />
+						</td>
+						<td align="right" className="menu" style={{fontSize: "18px",fontWeight: "400",letterSpacing: "0.28px",textDecoration: "none"}}>
+							<table cellpading="0" cellspacing="0">
+							<tr>
+								<td><span href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, 'Raleway"}}>All Pick</span></td>
+								<td><span href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, 'Raleway"}}>Turbo</span></td>
+								<td><span href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, 'Raleway"}}>Single Draft</span></td>
+							</tr>
+							</table>
+						</td>
+					</tr>	
+				</table>
+			)
+		}	
+
+		function Main01() {
+			return (
+				<table className="template main01" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<tr>
+						<td class="banner-td">
+							<a href="#">
+								<img style={{width: "600px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_c7824bb36cccc4a18e117277e3e9d327/images/35121502780295222.jpg" alt="banner"/>
+							</a>
+						</td>
+					</tr>
+				</table>
 			)
 		}
 
-		function Main2() {
+		function Main02() {
 			return (
-					<table className="template main2" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
-						<tr>
-							<td bgcolor="#FFFFFF" align="center" className="greetings">
-								<span style={{fontSize: "32px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Hi Emeli,</span>
-								<hr />
+				<table className="template main02" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<tr>
+						<td bgcolor="#FFFFFF" align="center" className="greetings">
+							<span style={{fontSize: "32px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Hi Emeli,</span>
+							<hr />
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF" align="center" className="thanks">
+							<p style={{lineHeight: "150%", fontSize: "18px", fontFamily: "'Times New Roman', Times, serif"}}>Thanks for registering on our site.<br/>Before we get started, we'll need to verify your email.</p>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF" class="confirmButton">
+							<table className="table-150" bgcolor="#ccad53" cellpadding="0" cellspacing="0" width="200" height="50" align="center">
+								<tr>
+									<td className="confirm" align="center">
+										<span style={{color: "#ffffff", fontSize: "22px", fontFamily: "'Times New Roman', Times, serif"}}>Confirm my email</span>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			)
+		}
+
+		function Main03() {
+			return (
+				<table style={{overflowX: 'hidden'}} className="template main03" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<tr>
+						<td align="left">
+							<td style={{padding: '20px'}}>
+								<span style={{fontSize: "14px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования являются только методом политического участия и смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Имеется спорная точка зрения, гласящая примерно следующее: активно развивающиеся страны третьего мира представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали.</span>
 							</td>
-						</tr>
-						<tr>
-							<td bgcolor="#FFFFFF" align="center" className="thanks">
-								<p style={{lineHeight: "150%", fontSize: "18px", fontFamily: "'Times New Roman', Times, serif"}}>Thanks for registering on our site.<br/>Before we get started, we'll need to verify your email.</p>
+						</td>
+					</tr>
+				</table>
+			)
+		}
+
+		function Main04() {
+			return (
+				<table className="template main04" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<tr>
+						<td align="center" height="40px">
+
+						</td>
+					</tr>
+				</table>
+			)
+		}
+
+		function Main05() {
+			return (
+				<table style={{overflowX: 'hidden'}} className="template main05" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<tr>
+						<td align="left">
+							<table cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+								<tr>
+									<td>
+										<img style={{minHeight: "500px", minWidth: "200px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+									</td>
+									<td style={{paddingLeft: '30px'}}>
+										<span style={{fontSize: "14px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования являются только методом политического участия и смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Имеется спорная точка зрения, гласящая примерно следующее: активно развивающиеся страны третьего мира представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали.</span>
+									</td>
+								</tr>
+							</table>
+							
+						</td>
+					</tr>
+					
+				</table>
+			)
+		}
+
+		function Main06() {
+			return (
+				<table className="template main06" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<tr>
+						<td align="center" width="100px" bgcolor="#FADFAD">
+							<span style={{textOrientation: "upright",writingMode: "vertical-rl",fontSize: "38px",fontFamily: "Arial Black, Gadget, sans-serif"}}>Amazing</span>
+						</td>
+						<td align="center" width="400px">
+							<img style={{width: "380px"}} src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6527776a9523772f00ea671e_652778529bc67b6489d88566/scale_1200"/>
+						</td>
+						<td align="center" width="100px" bgcolor="#FADFAD">
+							<span style={{textOrientation: "upright",writingMode: "vertical-rl",fontSize: "38px",fontFamily: "Arial Black, Gadget, sans-serif"}}>Pets</span>
+						</td>
+					</tr>
+				</table>
+			)
+		}
+
+		function Main07() {
+			return (
+				<table style={{overflowX: 'hidden'}} className="template main07" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<tr>
+						<td align="left">
+							<table cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+								<tr>
+									<td style={{paddingRight: '30px'}}>
+										<span style={{fontSize: "14px", fontFamily: "Arial, Helvetica, sans-serif;"}}>Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования являются только методом политического участия и смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Имеется спорная точка зрения, гласящая примерно следующее: активно развивающиеся страны третьего мира представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали.</span>
+									</td>
+									<td>
+										<img style={{minHeight: "500px", minWidth: "200px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+									</td>
+								</tr>
+							</table>
+							
+						</td>
+					</tr>
+					
+				</table>
+			)
+		}
+
+		function Main08() {
+			return (
+				<table style={{overflowX: 'hidden'}} className="template main08" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<tr>
+						<td align="left">
+							<table cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+								<tr>
+									<td style={{paddingRight: '50px'}}>
+										<img style={{minHeight: "200px", minWidth: "150px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+									</td>
+									<td style={{paddingRight: '50px'}}>
+										<img style={{minHeight: "200px", minWidth: "150px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+									</td>
+									<td>
+										<img style={{minHeight: "200px", minWidth: "150px"}} src="https://fikiwiki.com/uploads/posts/2022-02/1645030221_18-fikiwiki-com-p-kartinki-krasivie-vertikalnie-20.jpg" alt="banner"/>
+									</td>
+								</tr>
+							</table>
+							
+						</td>
+					</tr>
+					
+				</table>
+			)
+		}
+
+		function Main09() {
+			return (
+				<table className="template main09" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<tr>
+						<td align='center' width="30px" height="30px" bgcolor='#000000' >
+							<span style={{color: '#ffffff'}}>1</span>
+						</td>
+						<td style={{paddingLeft: '20px'}}>
+							<span style={{fontSize: '24px'}}>GREEN TEA "HEAVENLY TEARS"</span>
+						</td>
+					</tr>
+				</table>
+			)
+		}
+
+		function Main10() {
+			return (
+				<table className="template main10" cellpadding={"0"} cellspacing={"0"} width={"600"} bgcolor={"#FFFFFF"} align={"center"}>
+					<tr>
+						<td style={{paddingRight: '50px'}}>
+							<img style={{minHeight: "150px", minWidth: "150px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_f4bfb3d2f68f1f9808ca04e1386d274e/images/341504076871783.jpg" alt="banner"/>
+						</td>
+						<td>
+							<table cellpadding={"0"} cellspacing={"0"} bgcolor={"#FFFFFF"} align={"center"}>
+								<tr>
+									<td style={{paddingBottom: '20px'}}>
+										<span style={{fontSize: '24px'}}>Perfect on its own</span>
+									</td>						
+								</tr>
+								<tr>
+									<td>
+										<span style={{fontSize: '14px'}}>Each tear gracefully unfurls and dances in the water, gradually releasing a sublime and refined flavor. One of our most famous and highly prized teas. Ingredients: green tea, jasmine.</span>
+									</td>			
+								</tr>
+							</table>	
+						</td>
+					</tr>
+				</table>
+			)
+		}
+
+		function Main11() {
+			return (
+        	<table className="table-600 template main11" cellpading="0" cellspacing="0" width="600" align="center">
+				<tr bgcolor="#ffffff">
+              		<td height="80" width="600"></td>
+            	</tr>
+            	<tr>
+					<td>
+						<table className="things" cellpading="0" cellspacing="0" width="600" align="center" bgcolor="#ffffff">
+							<tr valign="top">
+							<td>
+								<table cellpading="0" cellspacing="0" align="center">
+								<tr>
+									<td align="center">
+									<img src="https://dota2.ru/img/items/iron_branch.jpg?1661172505"/>
+									</td>
+								</tr>
+								<tr>
+									<td height="120" width="200" align="center">
+									<span style={{fontFamily: 'Arial, Helvetica, sans-serif, Raleway'}}>Сажает в указанное место маленькое счастливое деревце, которое исчезнет через 20 секунд.</span>
+									</td>
+								</tr>
+								</table>
 							</td>
-						</tr>
+							<td>
+								<table cellpading="0" cellspacing="0" align="center">
+								<tr>
+									<td align="center">
+									<img src="https://dota2.ru/img/items/enchanted_mango.jpg?1682262783"/>
+									</td>
+								</tr>
+								<tr height="120">
+									<td width="200" align="center">
+									<span style={{fontFamily: 'Arial, Helvetica, sans-serif, Raleway'}}>Мгновенно восстанавливает 100 маны.</span>
+									</td>
+								</tr>
+								<tr>
+								</tr>
+								</table>
+							</td>
+							<td>
+								<table cellpading="0" cellspacing="0" align="center">
+								<tr>
+									<td align="center">
+									<img src="https://dota2.ru/img/items/tango.jpg?1691583989"/>
+									</td>
+								</tr>
+								<tr height="120">
+									<td width="200" align="center">
+									<span style={{fontFamily: 'Arial, Helvetica, sans-serif, Raleway'}}>
+										Съедает дерево, увеличивая восстановление здоровья на 7. 
+									</span>
+									</td>
+								</tr>
+								<tr>
+								</tr>
+								</table>
+							</td>
+							</tr>
+							<tr>
+							<td align="center">
+								<table cellpading="0" cellspacing="0" valign="top">
+								<tr>
+									<td align="center">
+									<span> Читайте Дальше...</span>
+									</td>
+								</tr>
+								</table>
+							</td>
+							<td align="center">
+								<table cellpading="0" cellspacing="0" valign="top">
+								<tr>
+									<td align="center">
+									<span> Читайте Дальше...</span>
+									</td>
+								</tr>
+								</table>
+							</td>
+							<td align="center">
+								<table cellpading="0" cellspacing="0" valign="top">
+								<tr>
+									<td align="center">
+									<span> Читайте Дальше...</span>
+									</td>
+								</tr>
+								</table>
+							</td>
+							</tr>
+						</table>
+						</td>
+			  </tr>
+        	</table>
+			)
+		}
+
+		function Main12() {
+			return (
+        	<table className="table-600 template main12" cellpading="0" cellspacing="0" width="600" align="center">
+              <tr>
+                <td>
+                    <table ClassName="things" cellpading="0" cellspacing="0" width="600" height="75" align="center" bgcolor="#ffffff"></table>
+                </td>
+              </tr>
+              <tr ClassName="genius">
+                <td>
+                <table ClassName="things" cellpading="0" cellspacing="0" width="600" align="center" bgcolor="#ffffff">
+                  <tr valign="top">
+                    <td>
+                      <table cellpading="0" cellspacing="0" align="center">
+                        <tr>
+                          <td width="250" align="center">
+                            <span  textIndent="40px">Лучше пофармить, чем не пофармить. Если встает выбор между тимейтом и фармом, я выберу конечно крипа, потому что там я погибну, а там монетку получу!</span>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td>
+                      <table cellpading="0" cellspacing="0" align="center">
+                        <tr>
+                          <td width="250" align="center">
+                            <span style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}} text-indent="40px">Знание — сила.<br/>Без Знаний ты не сможешь кастовать мои заклинания, а также без знаний ты не сможешь выйграть мид против меня</span>
+                          </td>
+                        </tr>
+                        <tr>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <table cellpading="0" cellspacing="0" valign="top">
+                        <tr>
+                            <td align="center">
+                              <img src="https://static.wikia.nocookie.net/dota2_gamepedia/images/4/40/Ursa_icon.png/revision/latest/scale-to-width-down/150?cb=20160411213321" height="50" style={{borderRadius: "30px"}}/>
+                            </td>
+                          </tr>
+                        <tr>
+                            <td width="300" align="center">
+                              <h3 style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Ursa</span></h3>
+                              <span ClassName="who" color="#D3D3D3" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}>Персонаж Доты</span>
+                            </td>
+                          </tr>
+                      </table>
+                    </td>
+                    <td align="center">
+                      <table cellpading="0" cellspacing="0" valign="top">
+                        <tr>
+                            <td align="center">
+                              <img src="https://static.wikia.nocookie.net/dota2_gamepedia/images/0/00/Invoker_icon.png/revision/latest/scale-to-width-down/150?cb=20160411220849" height="50" style={{borderRadius: "30px"}}/>
+                            </td>
+                          </tr>
+                        <tr>
+                            <td width="300" align="center">
+                              <h3 style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Invoker</span></h3>
+                              <span ClassName="who" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}>Персонаж Доты</span>
+                            </td>
+                          </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+				</td>
+              </tr>
+        	</table>
+			)
+		}
+
+		function Main13() {
+			return (
+					<table className="template Main13" cellpadding="0" cellspacing="0" width="600" align="center">
+					<tr>
+						<td>
+						<table>
 						<tr>
-							<td bgcolor="#FFFFFF" class="confirmButton">
-								<table className="table-150" bgcolor="#ccad53" cellpadding="0" cellspacing="0" width="200" height="50" align="center">
-									<tr>
-										<td className="confirm" align="center">
-											<span style={{color: "#ffffff", fontSize: "22px", fontFamily: "'Times New Roman', Times, serif"}}>Confirm my email</span>
+								<td className="things" cellpading="0" cellspacing="0" width="600" height="65" align="center">
+								</td>
+							</tr>
+							<tr>
+							<td className="S" align="center">
+								<table className="header-td menu">
+									<tr className="S" width ="600" cellpading="0" align="center">
+										<td align="center" cellspacing="0" cellpading="25" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#808080"}}>
+											<table>
+												<tr>
+													<td><img src="https://janesstory.ru/upload/iblock/9b3/pgo3w2167iez3f6wriagbohm5r08gvsh.jpg" height="155"/></td>
+												</tr>
+												<tr>
+													<td align="center" style={{color: "#000000"}}><span>Black Bag</span></td>
+												</tr>
+												<tr>
+													<td align="center" style={{fontSize: "28px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5"}}><span align="center">$90.00</span></td>
+												</tr>
+												<tr>
+													<td bgcolor="#ED760E" width="170" align="center" style={{fontSize: "24px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5",color: "#ffffff"}}><span align="center">Buy Now</span></td>
+												</tr>
+											</table>
+										</td>
+										<td align="center" cellspacing="0" cellpading="25" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#808080"}}>
+											<table>
+												<tr>
+													<td><img src="https://personal-gifts.ru/upload/iblock/2bc/2bc18b8eb126a0c42978754892725569.jpg" height="155"/></td>
+												</tr>
+												<tr>
+													<td align="center" style={{color: "#000000"}}><span>Black Wallet</span></td>
+												</tr>
+												<tr>
+													<td align="center" style={{fontSize: "28px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5"}}><span align="center">$35.00</span></td>
+												</tr>
+												<tr>
+													<td bgcolor="#ED760E" width="170" align="center" style={{fontSize: "24px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5",color: "#ffffff"}}><span align="center">Buy Now</span></td>
+												</tr>
+											</table>
+										</td>
+										<td align="center" cellspacing="0" cellpading="25" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#808080"}}>
+											<table>
+												<tr>
+													<td><img src="https://main-cdn.sbermegamarket.ru/big1/hlr-system/-16/336/984/904/221/310/600006635671b0.jpg" height="155"/></td>
+												</tr>
+												<tr>
+													<td align="center"  style={{color: "#000000"}}><span>Black Watch</span></td>
+												</tr>
+												<tr>
+													<td align="center" style={{fontSize: "28px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5"}}><span align="center">$55.00</span></td>
+												</tr>
+												<tr>
+													<td bgcolor="#ED760E" width="170" align="center" style={{fontSize: "24px",fontFamily: "Arial Black, Gadget, sans-serif",lineHeight: "1.5",color: "#ffffff"}}><span align="center">Buy Now</span></td>
+												</tr>
+											</table>
+										</td>
+
+										<td align="center" cellspacing="70" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC",paddingRight: "30px"}}>
 										</td>
 									</tr>
 								</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table className="things" cellpading="0" cellspacing="0" width="600" height="5" align="center"></table>
+								</td>
+							</tr>
+							<tr>
+								<td className="things" cellpading="0" cellspacing="0" width="600" height="75" align="center">
+								</td>
+							</tr>
+							</table>
 							</td>
-						</tr>
-					</table>
+					</tr>
+				</table> 
 			)
 		}
 
@@ -311,7 +741,7 @@
 					</tr>
 					<tr>
 						<td align="center" bgcolor="#FFFFFF">
-							<img style={{width: "110px", paddingTop: "16px", paddingBottom: "16px"}} src="../img/logo.png" alt="logo"/>
+							<img style={{width: "110px", paddingTop: "16px", paddingBottom: "16px"}} src="https://tlr.stripocdn.email/content/guids/CABINET_2ec97436767c2a3affe1ca04469ab056/images/211502462728809.png" alt="logo"/>
 						</td>
 					</tr>
 					<tr>
@@ -322,6 +752,240 @@
 				</table>
 			)
 		}
+
+		function Footer2() {
+			return (
+				<table className="template Footer2" cellpadding="0" cellspacing="0" width="600" align="center">
+						<tr>
+						<td>
+							<table className="things" cellpading="0" cellspacing="0" width="600" height="0" align="center" bgcolor="#ffffff"></table>
+						</td>
+						</tr>
+						<tr>
+						<td>
+							<table className="table-600" cellpading="0" cellspacing="0" width="600" align="center" bgcolor="#30D5C8">
+							<tr>
+								<td>
+									<table className="things" cellpading="0" cellspacing="0" width="600" height="25" align="center"></table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table className="things" cellpading="0" cellspacing="0" width="600" height="45" align="center"></table>
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+								<table className="header-td S" width ="550">
+									<tr cellpading="0" cellspacing="0" align="center" valign="top">
+										<td align="center">
+											<table>
+												<tr cellpading="0" cellspacing="0" align="left">
+													<td align="left" style={{color: "#fffff", fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Интернет поддержка</span></td>
+												</tr>
+												<tr cellpading="0" className="P" cellspacing="0" align="left">
+													<td align="left" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}> <span>Возможности</span></td>
+												</tr>
+												<tr cellpading="0" className="P" cellspacing="0" align="left">
+													<td align="left" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Возможности</span></td>
+												</tr>
+												<tr cellpading="0" className="P" cellspacing="0" align="left">
+													<td align="left" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Сверхгениальная возможность</span></td>
+												</tr>
+											</table>
+										</td>
+										<td align="center">
+											<table>
+												<tr cellpading="0" cellspacing="0" align="left">
+													<td align="center" style={{color: "#fffff", fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Поддержка</span></td>
+												</tr>
+												<tr cellpading="0" className="P" cellspacing="0" align="left">
+													<td align="center"  style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span> Возможности</span></td>
+												</tr>
+												<tr cellpading="0" className="P" cellspacing="0" align="left">
+													<td align="center"  style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Возможности</span></td>
+												</tr>
+												<tr cellpading="0" className="P" cellspacing="0" align="left">
+													<td align="center"  style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Сверхгениальная возможность</span></td>
+												</tr>
+											</table>
+										</td>
+										<td align="center">
+											<table>
+												<tr cellpading="0" cellspacing="0" align="left">
+													<td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Кампания</span></td>
+												</tr>
+												<tr cellpading="0" className="P" cellspacing="0" align="left">
+													<td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}> <span>Возможности</span></td>
+												</tr>
+												<tr cellpading="0" className="P" cellspacing="0" align="left">
+													<td align="center"  style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Возможности</span></td>
+												</tr>
+												<tr cellpading="0" className="P" cellspacing="0" align="left">
+													<td align="center"  style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Сверхгениальная возможность</span></td>                                         </tr>
+											</table>
+										</td>
+
+										<td align="center">
+											<table>
+												<tr cellpading="0" cellspacing="0" align="left">
+													<td align="center" style={{color: "#fffff", fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Сообщество</span></td>
+												</tr>
+												<tr cellpading="0" className="P" cellspacing="0" align="left">
+													<td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}> <span>Телеграмм</span></td>
+												</tr>
+												<tr cellpading="0" className="P" cellspacing="0" align="left">
+													<td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Вк</span></td>
+												</tr>
+												<tr cellpading="0" className="P" cellspacing="0" align="left">
+													<td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway"}}><span>Одноклассники</span></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr height="30">
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><img align="right" src="https://vinyl-market.ru/images/shop_items/432-3.jpg.webp" height="35"/></td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+							</table>
+							</td>
+						</tr>
+						<tr>
+						<td>
+							<table className="things" cellpading="0" cellspacing="0" width="602 " height="55" align="center" bgcolor="#30D5C8"></table>
+						</td>
+						</tr>
+						<tr>
+						<td>
+							<table className="table-600" cellpading="0" cellspacing="0" width="594" align="center" bgcolor="black">
+							<tr>
+								<td>
+									<table className="things" cellpading="0" cellspacing="0" width="600" height="15" align="center"></table>
+								</td>
+								</tr>
+							<tr>
+								<td align="center">
+								<table className="header-td S" width ="550" cellpading="0" cellspacing="0" align="center">
+									
+									<tr valign="top">
+										<td>
+											<table cellpading="0" cellspacing="0" width="550">
+												<tr cellpading="0" cellspacing="0" width="550" align="center">
+													<td align="left">
+													<table cellpading="0" cellspacing="0">
+														<tr>
+															<td align="left" bgcolor="darkgray"><img src="https://cdn-icons-png.flaticon.com/512/3081/3081797.png" width="50" height="35"/></td>
+															<td align="left" style={{color: "white", fontSize: "16px"}}><span>@2024 Шелби </span></td>
+			
+														</tr>
+													</table>
+													</td>
+													<td align="center">
+														<table cellpading="0" cellspacing="0" style={{borderSpacing: "20px",borderCollapse: "separate"}}>
+															<tr>
+																<td align="center"><img src="https://w7.pngwing.com/pngs/110/123/png-transparent-iphone-ipad-android-google-play-now-button-electronics-text-logo.png" width="120" height="35"/></td>
+																<td align="center"><img src="https://i-invdn-com.investing.com/landingPages/mobile_2018/ru/ru-badge-ios.png" width="120" height="55"/></td>
+				
+															</tr>
+														</table>
+														</td>
+														<td align="center">
+															<table cellpading="0" cellspacing="0" style={{borderSpacing: "20px",borderCollapse: "separate"}}>
+																<tr>
+																	<td align="center"><img src="https://cdn-icons-png.flaticon.com/128/8728/8728153.png" width="50" height="35"/></td>
+					
+																</tr>
+															</table>
+															</td>
+													<td align="right">
+														<table cellpading="0" cellspacing="0" style={{borderSpacing: "20px",borderCollapse: "separate"}}>
+															<tr>
+																<td align="right"><img src="https://cdn-icons-png.flaticon.com/512/145/145812.png" width="50" height="35"/></td>
+																<td align="right"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png" width="50" height="35"/></td>
+																<td style={{borderSpacing: "20px",borderCollapse: "separate"}} align="right"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="50" height="35"/></td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</td> 
+								</tr>
+							</table>
+							</td>
+						</tr>
+						<tr>
+						<td>
+							<table className="things" cellpading="0" cellspacing="0" width="600" height="15" align="center" bgcolor="black"></table>
+						</td>
+						</tr>
+					</table>
+				</td>
+				</tr>
+			</table> 
+			)
+		}
+
+		function Footer3() {
+			return (
+				<table className="template Footer3" cellpadding="0" cellspacing="0" width="600" align="center">
+					<tr>
+						<td bgcolor="#333333">
+						<table>
+						<tr>
+								<td className="things" cellpading="0" cellspacing="0" width="600" height="65" align="center">
+								</td>
+							</tr>
+							<tr align="center">
+								<td><img src="https://vinyl-market.ru/images/shop_items/432-3.jpg.webp" height="105"/></td>
+							</tr>
+							<tr>
+								<td className="things" cellpading="0" cellspacing="0" width="600" height="45" align="center">
+								</td>
+							</tr>
+							<tr>
+							<td className="S" align="center">
+								<table className="header-td menu">
+									<tr className="S" width ="400" cellpading="0" cellspacing="30" align="center">
+										<td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><span>About us</span></td>
+										<td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><span>Team</span></td>
+										<td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><span>News</span></td>
+										<td align="center" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><span>Contact us</span></td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table className="things" cellpading="0" cellspacing="0" width="600" height="5" align="center"></table>
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+								<table className="menu">
+									<tr>
+										<td><p className="s" href="#" style={{fontFamily: "Arial, Helvetica, sans-serif, Raleway", color: "#DCDCDC"}}><span>@2024 Сайт был сделан кланом Шелби</span></p></td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+							<tr>
+								<td className="things" cellpading="0" cellspacing="0" width="600" height="75" align="center">
+								</td>
+							</tr>
+							</table>
+							</td>
+					</tr>
+				</table> 
+			)
+		}
+
 	</script>
 	<script type="text/babel">
 		const headerNode = document.getElementById("header");
@@ -348,9 +1012,9 @@
 		let currentFooter;
 		let currentLoadMenu;
 
-		let headersArray = [<Header1 />, <Header2 />]
-		let mainsArray = [<Main1 />, <Main2 />]
-		let footersArray = [<Footer1 />]
+		let headersArray = [<Header1 />, <Header2 />, <Header3 />]
+		let mainsArray = [<Main01 />, <Main02 />, <Main03 />, <Main04 />, <Main05 />, <Main06 />, <Main07 />, <Main08 />, <Main09 />, <Main10 />, <Main11 />, <Main12 />, <Main13 />]
+		let footersArray = [<Footer1 />, <Footer2 />, <Footer3 />]
 
 		function handlerChose(e) {
 			let object = e.target;
@@ -358,15 +1022,19 @@
 			if (object.closest('.choseOption')) {
 				object = object.closest('.choseOption');
 
-				let numChose = object.classList[1].at(-1);
+				console.log(object.classList);
+				console.log(object.classList[1].at(-2) + object.classList[1].at(-1));
 
 				if (object.classList.contains("header")) {
+					let numChose = object.classList[1].at(-1);
 					currentHeader.press(numChose - 1);
 				}
 				else if (object.classList.contains("main")) {
+					let numChose = object.classList[1].at(-2) + object.classList[1].at(-1);
 					currentMain.press(numChose - 1);
 				}
 				else if (object.classList.contains("footer")) {
+					let numChose = object.classList[1].at(-1);
 					currentFooter.press(numChose - 1);
 				}
 			}
@@ -388,11 +1056,11 @@
 
 		function ChoseMain() {
 			const listItems = mainsArray.map((main, index) =>
-					<div className={"choseOption " + "mainMenu" + String(index+1) + " main"}>
-						<div className="choseWrapper">
-							{main}
-						</div>
+				<div className={"choseOption " + "mainMenu"+ String(Math.floor(index/100)) + String(index+1) + " main"}>
+					<div className="choseWrapper">
+						{main}
 					</div>
+				</div>
 			);
 
 			return (<div onClick={handlerChose}>
@@ -418,7 +1086,7 @@
 			constructor(props) {
 				super(props);
 				this.press = this.press.bind(this);
-				this.state = {content: <Header1 />};
+				this.state = {content: <Header2 />};
 			}
 			press(numChose) {
 				this.setState({content: headersArray[numChose]});
@@ -438,7 +1106,7 @@
 			constructor(props) {
 				super(props);
 				this.press = this.press.bind(this);
-				this.state = {content: [<Main1 />, <Main2 />]};
+				this.state = {content: [<Main04 />, <Main05 />, <Main04 />, <Main09 />, <Main04 />, <Main10 />, <Main04 />, <Main06 />]};
 			}
 			press(numChose) {
 				this.state.content.push(mainsArray[numChose]);
@@ -533,7 +1201,6 @@
 				);
 			}
 		}
-
 
 		function deleteTemplateOver(e) {
 			let object = e.target.closest(".template");
@@ -702,8 +1369,6 @@
 			}
 		}
 
-
-
 		let getNextElement = (cursorPosition, currentElement) => {
 			let currentElementCoord = currentElement.getBoundingClientRect();
 			let currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
@@ -753,7 +1418,6 @@
             </div>
         );
 
-		console.log("Upload default letter");
 		header.render(
 			<CurrentHeader />
 		);
