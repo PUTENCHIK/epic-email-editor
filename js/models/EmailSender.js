@@ -17,8 +17,6 @@ class EmailSender {
         }
 
         let letterHTML = RedactorReader.readLetterContent(true);
-        // MyLocalStorage.set_html_current_letter(letterHTML);
-        // let letterHTML = MyLocalStorage.get_current_letter()['html'];
 
         template.getElementsByClassName("mainTableContainer")[0].insertAdjacentHTML("afterbegin", letterHTML);
 
@@ -33,7 +31,7 @@ class EmailSender {
 
         let a = document.createElement('a');
         a.href = textFile;
-        a.download = "emailwizard_letter.eml";
+        a.download = "EEE_letter.eml";
         a.click();
         a.remove();
     }

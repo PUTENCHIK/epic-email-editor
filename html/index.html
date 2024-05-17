@@ -14,39 +14,23 @@
 	<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-	<!-- <script src="https://unpkg.com/react@18/umd/react.development.js"></script>			
-	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>		 -->
 </head>
 
 <body style="margin: 0; padding: 0;">
 	<input id="mainInputText" autofocus type="text" class="mainInputText dissable">
 	<div class="page-header">
 		<div class="letter-name">
-			ProjectName
+			Epic Email Editor
 		</div>
 		<div class="header-content">
 			<div class="header-elements-group">
 				<div class="logo-box">
 					<img src="../img/emailwizard-logo.png" alt="logo"/>
 				</div>
-				<div class="button button-icon button-save" title="Сохранить">
-					<img src="../img/save-icon.png" alt="save"/>
-				</div>
-				<div class="modal-save dissable">
-					<p class="phrase">Вы действительно хотите сохранить это письмо?</p>
-					<div class="btns">
-						<button id="save-no-btn" class="save-no-btn">Нет</button>
-						<button id="save-yes-btn" class="save-yes-btn">Да</button>
-					</div>
-				</div>
-				<div class="button button-text button-myemails">
-					<div class="__text">Мои письма</div>
-				</div>
 			</div>
 			<div class="header-elements-group">
 				<div class="button button-text primary-button button-send">
-					<div class="__text">Отправить</div>
+					<div class="__text">Send</div>
 				</div>
 			</div>
 		</div>
@@ -206,7 +190,6 @@
 	</main>
 
 	<script src="../js/models/MyLocalStorage.js"></script>
-	<script src="../js/redirect.js"></script>
 	
 	<script type="text/babel">
 		function Header1() {
@@ -765,38 +748,31 @@
 
         changeTemplatesBlock.render(
             <div className="changeTemplatesBlockWrapper">
-                <button onClick={RemoveTemplateHandler} class="removeTemplateButton" id="removeTemplateButton" type="button">Удалить</button>
-                <button onClick={changeMoveMode} class="dragTemplateButton" id="dragTemplateButton" type="button">Переместить</button>
+                <button onClick={RemoveTemplateHandler} class="removeTemplateButton" id="removeTemplateButton" type="button">Remove</button>
+                <button onClick={changeMoveMode} class="dragTemplateButton" id="dragTemplateButton" type="button">Replace</button>
             </div>
         );
 
-		if (MyLocalStorage.get_current_letter()['html']) {
-            console.log("Upload current letter");
+		console.log("Upload default letter");
+		header.render(
+			<CurrentHeader />
+		);
 
-            let mainTable = document.getElementsByClassName("mainTable")[0];
-            mainTable.outerHTML = MyLocalStorage.get_current_letter()['html'];
-		} else {
-            console.log("Upload default letter");
-            header.render(
-                <CurrentHeader />
-            );
+		main.render(
+			<CurrentMain />
+		);
 
-            main.render(
-                <CurrentMain />
-            );
+		footer.render(
+			<CurrentFooter />
+		);
 
-            footer.render(
-                <CurrentFooter />
-            );
+		templatesBlock.render(
+			<TemplatesBlockComponent />
+		);
 
-            templatesBlock.render(
-                <TemplatesBlockComponent />
-            );
-
-            chose.render(
-                <LoadTemplatesMenu/>
-            );
-		}
+		chose.render(
+			<LoadTemplatesMenu/>
+		);
 
 
 	</script>
@@ -804,7 +780,6 @@
 	<script src="../js/my-script.js"></script>
 	<script src="../js/models/FixedWindow.js"></script>
 	<script src="../js/models/SendEmailWindow.js"></script>
-	<script src="../js/models/SaveEmailWindow.js"></script>
 	<script src="../js/models/RedactorReader.js"></script>
 	<script src="../js/models/EmailSender.js"></script>
 </body>

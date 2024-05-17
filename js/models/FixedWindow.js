@@ -2,7 +2,7 @@
  * Базовый класс для окон с формами, перекрывающими остальной контент на странице
  */
 class FixedWindow {
-    constructor(title = "Название окна") {
+    constructor(title = "Default window") {
         this.title = title;
 
         this.container = document.createElement("div");

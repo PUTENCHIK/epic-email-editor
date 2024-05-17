@@ -1,3 +1,5 @@
+console.log('upload-template');
+
 try {
     MyLocalStorage.create();
 } catch {
@@ -14,4 +16,4 @@ if (! MyLocalStorage.get_letter_template()) {
         MyLocalStorage.set_letter_template(null);
     }
 }
-window.location.href = "myemails.html";
+window.location.href = "index.html";
